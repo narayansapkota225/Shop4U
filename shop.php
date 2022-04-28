@@ -1,5 +1,5 @@
 <?php include('./partial/regis.php') ?>
-<!-- content start here-->
+<!-- content start here-->Test
 <section class="py-5 text-center container">
     <div class="container">
         <h1 class="mt-5">Our Shop</h1>
