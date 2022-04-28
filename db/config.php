@@ -1,6 +1,6 @@
 <?php
 /* conect to DB*/
-define('DB_SERVER', 'localhost');
+define('DB_SERVER', '20.53.237.147:1443');
 define('DB_USERNAME', 'phpadmin');
 define('DB_PASSWORD', 'FedMates2022@');
 define('DB_NAME', 'Shop4U');
