@@ -1,5 +1,4 @@
 <?php include('./partial/regis.php') ?>
-<?php include('.partial/pickermenu.php') ?>
 <!-- content start here-->
 <section class="py-5 text-center container">
     <div class="container">
