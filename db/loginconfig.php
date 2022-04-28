@@ -1,7 +1,7 @@
 <?php 
 session_start(); 
 
-include "config.php";
+require_once "config.php";
 
 if (isset($_POST['uname']) && isset($_POST['password'])) {
     function validate($data){
