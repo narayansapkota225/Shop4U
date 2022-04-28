@@ -1,6 +1,6 @@
 <?php $Title = "Login - Shop4U"?>
- <?php include('partial/menu.php')?>
- 
+<?php include('partial/menu.php')?>
+
  <!-- login container start-->
  <div class="container-fluid vh-100" style="margin-top:100px">
             <div class="" style="margin-top:200px">
