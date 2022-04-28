@@ -26,7 +26,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         $sql = "SELECT * FROM user WHERE username='$uname' AND psswd='$pass'";
         $result = mysqli_query($conn, $sql);
 
-        if (mysqli_num_rows($result) === 0) {
+        if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
             if ($row['username'] === $uname && $row['password'] === $pass) {
                 echo "Logged in!";
