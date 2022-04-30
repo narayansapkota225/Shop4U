@@ -35,7 +35,7 @@
   </div>
   <div class="d-flex">
   <form class="d-flex justify-content-start">
-          <a href="../index.php"><button class="btn btn-outline-success me-2" type="button">Log Out</button></a>
+          <a href="../db/logoutconfig.php"><button class="btn btn-outline-success me-2" type="button">Log Out</button></a>
     </form>
     </div>
 </nav>

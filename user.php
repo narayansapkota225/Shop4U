@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+if (isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['role'] )) {
 ?>
 <?php $Title = "User Home - Shop4U"?>
 <?php include('partial/usermenu.php')?>
@@ -9,7 +9,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <!-- content here-->
 <main class="flex-shrink-0">
     <div class="container">
-        <h1 class="mt-5">Hello, </h1>
+        <h1 class="mt-5">Hello,<?php echo $_SESSION['firstname']; ?> </h1>
     </div>
 </main>
 <!-- content end -->

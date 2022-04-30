@@ -7,4 +7,17 @@
 </div>
 </main>
 <!-- content end-->
+<script type="text/javascript">  function preventBack() {window.history.forward();}  setTimeout("preventBack()", 0);  window.onunload = function () {null};</script>
+<script language="JavaScript">
+    window.onload = passCheck();
+    
+    function passCheck(){
+      if(prompt("Please enter your password","") == "admin"){
+        return;
+      }else{
+        window.location = "../index.php";
+        return;
+      }
+    }
+  </script>
 <?php include('partial/footer.php')?>

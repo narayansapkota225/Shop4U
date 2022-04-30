@@ -34,8 +34,16 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['firstname'] = $row['firstname'];
                 $_SESSION['id'] = $row['id'];
-
+                $_SESSION['role'] = $row['role'];
+                if ($row['role'] == 1) {
                 header("Location: ../user.php");
+                }
+                else if ($row['role'] == 2) {
+                    header("Location: ../picker.php");
+                }
+                else {
+                    header("Location: ../admin.php");
+                }
                 exit();
 
             }else{
@@ -54,3 +62,4 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
     header("Location: ../login.php");
     exit();
 }
+?>

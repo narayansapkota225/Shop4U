@@ -12,7 +12,7 @@
                             <p class="error"><?php echo $_GET['error']; ?></p>
                             <?php } ?>
                         </div>
-                        <form action="./db/loginconfig.php" method="POST">
+                        <form action="../db/loginconfig.php" method="POST">
                             <div class="p-4 text-center">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i

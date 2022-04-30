@@ -1,3 +1,8 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['username'])) {      
+?>
 <?php include('./partial/pickermenu.php') ?>
 <!-- content start here -->
 <main class="flex-shrink-0">
@@ -8,3 +13,9 @@
 </main>
 <!-- content end here -->
 <?php include('./partial/footer.php') ?>
+<?php 
+}else{
+     header("Location: ../login.php");
+     exit();
+}
+ ?>
