@@ -22,7 +22,8 @@
       <div class="navbar-nav">
         <a class="nav-link fs-4" href="../categories.php">Categories</a>
         <a class="nav-link fs-4" href="#">Product</a>
-        <li class="nav-item dropdown">
+        <a class="nav-link fs-4" href="../shop.php">Shop</a>
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle fs-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Picker
           </a>
@@ -30,7 +31,7 @@
             <li><a class="dropdown-item" href="#">login for Picker</a></li>
             <li><a class="dropdown-item" href="#">Sign up for Picker</a></li>
           </ul>
-        </li>
+        </li> -->
       </div>
     </div>
   </div>

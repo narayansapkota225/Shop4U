@@ -1,13 +1,13 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['id']) && isset($_SESSION['username'])) {      
+if (isset($_SESSION['id']) && isset($_SESSION['username']) && ($_SESSION['role']==2)) {  
 ?>
 <?php include('./partial/pickermenu.php') ?>
 <!-- content start here -->
 <main class="flex-shrink-0">
     <div class="container">
-        <h1 class="mt-5">Hello, </h1>
+        <h1 class="mt-5">Hello,<?php echo $_SESSION['firstname']; ?> </h1>
         <p class="lead">Ready to pick Picker</p>
     </div>
 </main>

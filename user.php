@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['role'] )) {
+if (isset($_SESSION['id']) && isset($_SESSION['username']) && ($_SESSION['role']==1 )) {
 ?>
 <?php $Title = "User Home - Shop4U"?>
 <?php include('partial/usermenu.php')?>
