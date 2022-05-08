@@ -113,6 +113,8 @@
                     <button class="btn btn-primary " type="submit" >Submit</button>
                 </div>
             </form>
+            <a href="../pickersignup.php"><p class="text-center mt-5">Sign Up for Picker
+            </p></a>
             <p class="text-center mt-5">Have Account?
                 <a href="../login.php"><span class="text-primary">Login</span></a>
             </p>
