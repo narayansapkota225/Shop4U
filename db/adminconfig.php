@@ -3,11 +3,11 @@
         /* Check Login form submitted */        
         if(isset($_POST['Submit'])){
                 /* Define username and associated password array */
-                $logins = array('admin' => 'admin');
+                $logins = array('21232f297a57a5a743894a0e4a801fc3' => '0192023a7bbd73250516f069df18b500');
                 
                 /* Check and assign submitted Username and Password to new variable */
-                $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
-                $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
+                $Username = isset($_POST['Username']) ? md5($_POST['Username']) : '';
+                $Password = isset($_POST['Password']) ? md5($_POST['Password']) : '';
                 
                 /* Check Username and Password existence in defined array */            
                 if (isset($logins[$Username]) && $logins[$Username] == $Password){
@@ -17,7 +17,7 @@
                         exit;
                 } else {
                         /*Unsuccessful attempt: Set error message */
-                        $msg="<span style='color:red'>Invalid Login Details</span>";
+                        header("location:../adminlogin.php?error=Incorect User name or password");
                 }
         }
 ?>

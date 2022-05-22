@@ -15,7 +15,7 @@ if($res == TRUE){
             $id = $rows['id'];
             $firstname = $rows['firstname'];
             $lastname = $rows['lastname'];
-            $username = $rows['username'];
+            $email = $rows['email'];
             $role = $rows['rolename'];
 
             //display the value
@@ -23,14 +23,15 @@ if($res == TRUE){
 
             <tr>
                 <th scope="row"><?php echo $sn++; ?></th>
-                <td><?php echo $firstname; ?></td>
-                <td><?php echo $lastname; ?></td>
-                <td><?php echo $role; ?></td>
-                <td><?php echo $username; ?></td>
-                <td>
-                    <button type="button" class="btn btn-warning">Update</button>
+                <td scope="row"><?php echo $firstname; ?></td>
+                <td scope="row"><?php echo $lastname; ?></td>
+                <td scope="row"><?php echo $role; ?></td>
+                <td scope="row"><?php echo $email; ?></td>
+                <td scope="row">
+                    <a href="../updateuser.php?update=<?php echo $id; ?>"><button type="button" class="btn btn-warning">Update</button></a>
                     <button type="button" class="btn btn-dark">Blocked</button>
                     <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-info">Reset Password</button>
                 </td>
             </tr>                
 

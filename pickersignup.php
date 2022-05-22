@@ -1,75 +1,52 @@
-<?php $Title = "Sign Up Picker - Shop4U"?>
+<?php $Title = "Sign Up for Picker- Shop4U"?>
 <?php include('./partial/menu.php')?>
 <!-- sign up container start-->
-<div class="container-fluid vh-100">
-    <div class="" style="margin-top:200px">
+<div class="container-fluid vh-10">
+    <div class="" style="margin-top:40px">
         <div class="rounded d-flex justify-content-center">
-            <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+            <div class="col-md-6 col-sm-21 shadow-lg p-5 bg-secondary text-light rounded">
                 <div class="text-center">
-                    <h3 class="text-primary">Sign Up for Picker</h3>
+                    <h3 class="text-light">Sign Up for Picker</h3>
+                    <?php if (isset($_GET['error'])) { ?>
+                    <p class="alert alert-danger alert-dismissible fade show"><?php echo $_GET['error']; ?></p>
+                    <?php } ?>
                 </div>
-                <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-4">
-                        <label for="validationCustom01" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="validationCustom01" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Required
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationCustom02" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="validationCustom02" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Required
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationCustomUsername" class="form-label">Username</label>
-                        <div class="input-group has-validation">
-                            <span class="input-group-text" id="inputGroupPrepend">@</span>
-                            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Please choose a username.
-                            </div>
-                        </div>
+                <form class="row g-3 needs-validation" action="../db/pickersignupconfig.php" method="POST">
+                    <div class="col-md-6">
+                        <label class="form-label">First name</label>
+                        <input type="text" placeholder="John" class="form-control" name="fname"
+                            required="required">
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">Phone No.</label>
-                        <input type="text" class="form-control" id="validationCustom03" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid Phone Number.
-                        </div>
+                        <label class="form-label">Last name</label>
+                        <input type="text" placeholder="Smith" class="form-control" name="lname"
+                            required="required">
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="validationCustom04" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid Email.
-                        </div>
+                        <label class="form-label"><span class="fa-solid fa-phone"></span> Phone Number</label>
+                        <input type="tel" class="form-control" name="phno" id="pho" placeholder="0448751365"
+                        pattern="[0]{1}[0-5]{1}[0-9]{8}" 
+                        oninvalid="setCustomValidity('Please enter Valid Phone Number')"
+                        onchange="try{setCustomValidity('')}catch(e){}" required="required">
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="validationCustom05" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid Address.
-                        </div>
+                        <label class="form-label"><span class="fa-solid fa-envelope"></span> Email</label>
+                        <input type="email" placeholder="exampler@mail.com" name="email" class="form-control" 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                        oninvalid="setCustomValidity('Please enter Valid Email Address')"
+                        onchange="try{setCustomValidity('')}catch(e){}" required="required">
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">City</label>
-                        <input type="text" class="form-control" id="validationCustom06" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid City.
-                        </div>
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-control" name="adds" required="required">
                     </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom04" class="form-label">State</label>
-                        <select class="form-select" id="validationCustom07" required>
+                    <div class="col-md-6">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" name="city" required="required">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">State</label>
+                        <select class="form-select" name="state" required="required">
                             <option selected disabled value="">Choose...</option>
                             <option>NSW</option>
                             <option>VIC</option>
@@ -80,48 +57,62 @@
                             <option>TAS</option>
                             <option>ACT</option>
                         </select>
-                        <div class="invalid-feedback">
-                            Please select state.
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="validationCustom05" class="form-label">Post Code</label>
-                        <input type="text" class="form-control" id="validationCustom08" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid Post Code.
-                        </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom09" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="validationCustom09" required>
-                        <div class="invalid-feedback">
-                            Please enter a password.
-                        </div>
+                        <label class="form-label">Post Code</label>
+                        <input type="text" class="form-control" pattern="[0-9]{4}" name="pocode" 
+                        oninvalid="setCustomValidity('Please enter Valid Post Code')"
+                        onchange="try{setCustomValidity('')}catch(e){}" required="required">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Transportation</label>
+                        <select class="form-select" name="trans" required="required">
+                            <option selected disabled value="">Choose...</option>
+                            <option>Bicycle</option>
+                            <option>Car</option>
+                            <option>Motor Cycle</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Driving License (optional)</label>
+                        <input type="text" class="form-control" name="lic">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label"><span class="fa-solid fa-key"></span> Password</label>
+                        <input type="password" class="form-control" name="pswd" 
+                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+                        oninvalid="setCustomValidity('Password must contain UpperCase, LowerCase, Number/SpecialCharacter and Min 8 Characters')"
+                        onchange="try{setCustomValidity('')}catch(e){}" required="required">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label"><span class="fa-solid fa-key"></span> Confirm Password</label>
+                        <input type="password" class="form-control" name="cpswd" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required">
                     </div>
                     <div class="col-12">
                         <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">
-                            Agree to terms and conditions
-                        </label>
-                        <div class="invalid-feedback">
-                            You must agree before submitting.
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
+                                required="required">
+                            <label class="form-check-label" for="invalidCheck">
+                                Agree to terms and conditions
+                            </label>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 text-center">
-                    <button class="btn btn-primary " type="submit" >Submit</button>
-                </div>
-            </form>
-            <a href="../signup.php"><p class="text-center mt-5">Sign Up for Shopper
-            </p></a>
-            <p class="text-center mt-5">Have Account?
-                <a href="../login.php"><span class="text-primary">Login</span></a>
-            </p>
+                    <p class="col-12 text-center">
+                        <button class="btn btn-light bg-info" type="submit"><span class="fa-solid fa-paper-plane"></span>
+                            Submit</button>
+                    </p>
+                </form>
+                <a href="../signup.php" class="text-info">
+                    <p class="text-center mt-1">Sign Up for Shopper
+                    </p>
+                </a>
+                <p class="text-center mt-1">Have Account?
+                    <a href="../login.php"class="text-info">Login</a>
+                </p>
             </div>
-        </div>  
+        </div>
     </div>
 </div>
- <!-- sign up container end-->
-<script src="js/validation.js"></script>
- <?php include('partial/footer.php')?>
+<!-- sign up container end-->
+<?php include('partial/footer.php')?>

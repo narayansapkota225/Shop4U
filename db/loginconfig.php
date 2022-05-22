@@ -3,7 +3,7 @@ session_start();
 
 require_once "config.php";
 
-if (isset($_POST['uname']) && isset($_POST['password'])) {
+if (isset($_POST['uname']) && isset($_POST['passwd'])) {
     function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -12,10 +12,10 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
     }
 
     $uname = validate($_POST['uname']);
-    $pass = validate($_POST['password']);
+    $pass = validate($_POST['passwd']);
 
     if (empty($uname)) {
-        header("Location: ../login.php?error=User Name is required");
+        header("Location: ../login.php?error=Email is required");
         exit();
 
     }else if(empty($pass)){
@@ -23,19 +23,23 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         exit();
 
     }else{
-        $sql = "SELECT * FROM user WHERE username='$uname' AND password='$pass'";
+        $sql = "SELECT * FROM user WHERE email='$uname'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
-            if ($row['username'] === $uname && $row['password'] === $pass) {
+            if (password_verify($pass, $row['password'])) {
                 echo "Logged in!";
 
-                $_SESSION['username'] = $row['username'];
+                $_SESSION['email'] = $row['email'];
                 $_SESSION['firstname'] = $row['firstname'];
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['role'] = $row['role'];
-                if ($_SESSION['role'] == 1) {
+                $_SESSION['suspended'] = $row['suspended'];
+
+                if ($_SESSION['suspended'] == 1){
+                header("Location: ../login.php? error=Account is Restricted Please Contact Administrator");
+                }else if ($_SESSION['role'] == 1 ) {
                 header("Location: ../user.php");
                 }
                 else if ($_SESSION['role'] == 2) {
@@ -44,12 +48,12 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
                 exit();
 
             }else{
-                header("Location: ../login.php? error=Incorect User name or password");
+                header("Location: ../login.php? error=Incorect Email or password");
                 exit();
             }
 
         }else{
-            header("Location: ../login.php? error=Incorect User name or password");
+            header("Location: ../login.php? error=Incorect Email or password");
             exit();
         }
     }

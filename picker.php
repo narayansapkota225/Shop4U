@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['id']) && isset($_SESSION['username']) && ($_SESSION['role']==2)) {  
+if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==2)) {  
 ?>
 <?php include('./partial/pickermenu.php') ?>
 <!-- content start here -->

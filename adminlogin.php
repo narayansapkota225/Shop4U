@@ -3,9 +3,9 @@
 <!-- Content start here -->
 <form action="../db/adminconfig.php" method="post" name="Login_Form">
   <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
-    <?php if(isset($msg)){?>
+    <?php if(isset($_GET['error'])){?>
     <tr>
-      <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
+      <td colspan="2" align="center" valign="top"><p class="alert alert-danger alert-dismissible fade show"><?php echo $_GET['error'];?></p></td>
     </tr>
     <?php } ?>
     <tr>
