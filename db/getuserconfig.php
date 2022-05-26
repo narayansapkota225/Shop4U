@@ -21,5 +21,7 @@
         $trans= $n['transportation'];
         $lic= $n['license'];
         $role= $n['rolename'];
+        $suspended=$n['suspended'];
+        $erase=$n['erase'];
      }
  }

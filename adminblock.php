@@ -5,25 +5,23 @@ if(!isset($_SESSION['UserData']['Username'])){
         exit;
 }
 ?>
-<?php $Title = "User Page - Shop4U"?>
+<?php $Title = "Blocked User Page - Shop4U"?>
 <?php include('partial/adminmenu.php')?>
 <!-- content here -->
 <main class="flex-shrink-0">
 <div class="container">
-    <h1 class="mt-5">User Page</h1>
+    <h1 class="mt-5">Blocked User Page</h1>
     <?php if (isset($_GET['result'])) { ?>
     <p class="alert alert-success alert-dismissible fade show"><strong><?php echo $_GET['result']; ?></strong></p>
     <?php } ?>
 </div>
 <div class="container ">
   <div class="container-fluid justify-content-center">
-      <a href="../adduser.php"><button class="btn btn-lg btn-outline-primary" type="button" >Add User</button></a>
-      <a href="../adminblock.php"><button class="btn btn-lg btn-outline-secondary" type="button" >Blocked User</button></a>
-      <a href="#"><button class="btn btn-lg btn-outline-danger" type="button" >Deleted User</button></a>
+      <a href="../adminuser.php"><button class="btn btn-lg btn-outline-primary" type="button" ><-- Back</button></a>
   </div>
   <div class="table-responsive mt-2" >
     <table class="table table-striped caption-top">
-    <caption><h3>List of Active Users</h3></caption>
+    <caption><h3>List of Blocked Users</h3></caption>
       <thead class="table-dark">
         <tr>
           <th scope="col">No.</th>
@@ -35,7 +33,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         </tr>
       </thead>
       <tbody>
-        <?php include('db/adminuserconfig.php') ?> 
+        <?php include('db/adminblockconfig.php') ?> 
       </tbody>
     </table>
   </div>

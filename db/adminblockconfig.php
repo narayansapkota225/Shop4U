@@ -2,7 +2,7 @@
 
 require_once "config.php";
 
-$sql = "SELECT * FROM user Where suspended ='0' AND erase='0'";
+$sql = "SELECT * FROM user Where suspended ='1' AND erase='0'";
 
 $res = mysqli_query($conn, $sql);
 $sn = 1;
@@ -28,10 +28,7 @@ if($res == TRUE){
                 <td scope="row"><?php echo $role; ?></td>
                 <td scope="row"><?php echo $email; ?></td>
                 <td scope="row">
-                    <a href="../updateuser.php?update=<?php echo $id; ?>"><button type="button" class="btn btn-warning">Update</button></a>
-                    <a href="../blockuser.php?update=<?php echo $id; ?>"><button type="button" class="btn btn-dark">Block</button></a>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                    <button type="button" class="btn btn-info">Reset Password</button>
+                    <a href="../unblockuser.php?update=<?php echo $id; ?>"><button type="button" class="btn btn-secondary">Unblock</button></a>
                 </td>
             </tr>                
 
