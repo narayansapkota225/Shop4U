@@ -5,7 +5,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         exit;
 }
 ?>
-<?php $Title = "User Page - Shop4U"?>
+<?php $Title = "Unblock User | Admin - Shop4U"?>
 <?php include('partial/adminmenu.php')?>
 <!-- content here -->
 <div class="container-fluid vh-10" style="margin-top:10px">
@@ -25,7 +25,7 @@ if(!isset($_SESSION['UserData']['Username'])){
                                 </div>
                                 <div class="d-flex justify-content-evenly">
                                     <button class="btn btn-danger text-start mt-2 " type="submit">Yes</button>
-                                    <a href="../adminuser.php"><button class="btn btn-dark text-end mt-2" type="button">Cancel</button></a>
+                                    <a href="../adminblock.php"><button class="btn btn-dark text-end mt-2" type="button">Cancel</button></a>
                                 </div>
                             </div>
                         </form>

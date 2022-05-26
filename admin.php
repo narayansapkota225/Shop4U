@@ -5,7 +5,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         exit;
 }
 ?>
-<?php $Title = "Admin Page - Shop4U"?>
+<?php $Title = "Home | Admin - Shop4U"?>
 <?php include('partial/adminmenu.php')?>
 <!-- content here -->
 <main class="flex-shrink-0">

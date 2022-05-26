@@ -1,4 +1,4 @@
-<?php $Title = "Admin Login Page - Shop4U"?>
+<?php $Title = "Admin Login - Shop4U"?>
 <?php include('partial/menu.php')?>
 <!-- Content start here -->
 <form action="../db/adminconfig.php" method="post" name="Login_Form">

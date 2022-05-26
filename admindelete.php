@@ -5,7 +5,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         exit;
 }
 ?>
-<?php $Title = "Blocked User Page - Shop4U"?>
+<?php $Title = "Deleted Users | Admin - Shop4U"?>
 <?php include('partial/adminmenu.php')?>
 <!-- content here -->
 <main class="flex-shrink-0">
@@ -17,7 +17,7 @@ if(!isset($_SESSION['UserData']['Username'])){
 </div>
 <div class="container ">
   <div class="container-fluid justify-content-center">
-      <a href="../adminuser.php"><button class="btn btn-lg btn-outline-primary" type="button" ><-- Back</button></a>
+      <a href="../adminuser.php"><button class="btn btn-lg btn-outline-primary" type="button" ><span class="fa-solid fa-arrow-left"></span> Back</button></a>
   </div>
   <div class="table-responsive mt-2" >
     <table class="table table-striped caption-top">

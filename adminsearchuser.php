@@ -5,23 +5,30 @@ if(!isset($_SESSION['UserData']['Username'])){
         exit;
 }
 ?>
-<?php $Title = "Blocked Users | Admin - Shop4U"?>
+<?php $Title = "Search Users | Admin - Shop4U"?>
 <?php include('partial/adminmenu.php')?>
 <!-- content here -->
+<?php $search = $_POST['search'];?>
 <main class="flex-shrink-0">
 <div class="container">
-    <h1 class="mt-5">Blocked User Page</h1>
+    <h1 class="mt-5">User Page</h1>
     <?php if (isset($_GET['result'])) { ?>
     <p class="alert alert-success alert-dismissible fade show"><strong><?php echo $_GET['result']; ?></strong></p>
     <?php } ?>
+    <?php if (isset($_GET['error'])) { ?>
+    <p class="alert alert-danger alert-dismissible fade show"><strong><?php echo $_GET['error']; ?></strong></p>
+    <?php } ?>
 </div>
 <div class="container ">
-  <div class="container-fluid justify-content-center">
-      <a href="../adminuser.php"><button class="btn btn-lg btn-outline-primary" type="button" ><span class="fa-solid fa-arrow-left"></span> Back</button></a>
-  </div>
+    <div class="container-fluid justify-content-center">
+        <a href="../adminuser.php"><button class="btn btn-lg btn-outline-primary" type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a> 
+    </div>
+    <div class="container">
+    <p class="text-center fs-4"><strong> Search Result of "<?php echo $search;?>"</strong></p>
+    </div>
   <div class="table-responsive mt-2" >
     <table class="table table-striped caption-top">
-    <caption><h3>List of Blocked Users</h3></caption>
+    <caption><h3>List of Active Users</h3></caption>
       <thead class="table-dark">
         <tr>
           <th scope="col">No.</th>
@@ -33,7 +40,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         </tr>
       </thead>
       <tbody>
-        <?php include('db/adminblockconfig.php') ?> 
+        <?php include('db/adminsearchuserconfig.php') ?> 
       </tbody>
     </table>
   </div>

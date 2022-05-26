@@ -5,12 +5,12 @@ if(!isset($_SESSION['UserData']['Username'])){
         exit;
 }
 ?>
-<?php $Title = "User Page - Shop4U"?>
+<?php $Title = "Update User | Admin - Shop4U"?>
 <?php include('partial/adminmenu.php')?>
 <!-- content start here -->
 <div class="container">
     <div class="container" style="margin-top: 40px">
-        <a href="../adminuser.php"><button class="btn btn-primary " type="submit"><-- Back</button></a>
+        <a href="../adminuser.php"><button class="btn btn-primary " type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
     </div>
     <div class="col-md-6 col-sm-21 shadow-lg p-5 rounded" style="margin-top: 40px">
         <h3 >Update User</h3>

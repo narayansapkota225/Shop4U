@@ -5,7 +5,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         exit;
 }
 ?>
-<?php $Title = "Delete User - Shop4U"?>
+<?php $Title = "Delete User | Admin - Shop4U"?>
 <?php include('partial/adminmenu.php')?>
 <!-- content here -->
 <div class="container-fluid vh-10" style="margin-top:10px">
