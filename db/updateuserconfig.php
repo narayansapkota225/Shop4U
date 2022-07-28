@@ -32,11 +32,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             
             if(($role == "Shopper")){
             $sql="UPDATE user SET firstname='$fname', lastname='$lname', phone='$phno', email='$email',
-            address='$adds', city='$city', state='$state', postCode='$pocode', rolename='$role', role='1'  WHERE id='$id' ";
+            address='$adds', city='$city', state='$state', postCode='$pocode',transportation='',
+            license='', rolename='$role', role='1'  WHERE id='$id' ";
 
             $result = mysqli_query($conn,$sql);
                 if($result){
-                    header("Location: ../adminuser.php? result=Account has been Successfully Updated");
+                    header("Location: ../admin/adminuser.php? result=Account has been Successfully Updated");
                 }
             } 
             else if(($role == "Picker")){
@@ -46,21 +47,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $result = mysqli_query($conn,$sql);
                 if($result){
-                    header("Location: ../adminuser.php? result=Account has been Successfully Updated");
+                    header("Location: ../admin/adminuser.php? result=Account has been Successfully Updated");
                 }
             } 
         }else{
-            header("Location: ../updateuser.php?update=$id&error=Email already Exist");
+            header("Location: ../admin/updateuser.php?update=$id&error=Email already Exist");
 
         }
     }else{
     if(($role == "Shopper")){
         $sql="UPDATE user SET firstname='$fname', lastname='$lname', phone='$phno', email='$email',
-        address='$adds', city='$city', state='$state', postCode='$pocode', rolename='$role', role='1'  WHERE id='$id' ";
+        address='$adds', city='$city', state='$state', postCode='$pocode',transportation='',
+            license='', rolename='$role', role='1'  WHERE id='$id' ";
 
         $result = mysqli_query($conn,$sql);
             if($result){
-                header("Location: ../adminuser.php? result=Account has been Successfully Updated");
+                header("Location: ../admin/adminuser.php? result=Account has been Successfully Updated");
             }
         } 
         else if(($role == "Picker")){
@@ -70,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $result = mysqli_query($conn,$sql);
             if($result){
-                header("Location: ../adminuser.php? result=Account has been Successfully Updated");
+                header("Location: ../admin/adminuser.php? result=Account has been Successfully Updated");
             }
         }
 }

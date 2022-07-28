@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==1 )) {
 ?>
 <?php $Title = "User Home - Shop4U"?>
-<?php include('partial/usermenu.php')?>
+<?php include('../partial/usermenu.php')?>
 
 <!-- content here-->
 <main class="flex-shrink-0">
@@ -13,7 +13,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==1
     </div>
 </main>
 <!-- content end -->
-<?php include('partial/footer.php')?>
+<?php include('../partial/footer.php')?>
 <?php 
 }else{
      header("Location: ../login.php");

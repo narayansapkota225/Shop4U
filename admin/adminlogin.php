@@ -1,5 +1,5 @@
 <?php $Title = "Admin Login - Shop4U"?>
-<?php include('partial/menu.php')?>
+<?php include('../partial/menu.php')?>
 <!-- Content start here -->
 <form action="../db/adminconfig.php" method="post" name="Login_Form">
   <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
@@ -26,4 +26,4 @@
   </table>
 </form>
 <!-- Content End here-->
-<?php include('partial/footer.php')?>
+<?php include('../partial/footer.php')?>

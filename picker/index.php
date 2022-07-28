@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==2)) {  
 ?>
-<?php include('./partial/pickermenu.php') ?>
+<?php include('../partial/pickermenu.php') ?>
 <!-- content start here -->
 <main class="flex-shrink-0">
     <div class="container">
@@ -12,7 +12,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==2
     </div>
 </main>
 <!-- content end here -->
-<?php include('./partial/footer.php') ?>
+<?php include('../partial/footer.php') ?>
 <?php 
 }else{
      header("Location: ../login.php");

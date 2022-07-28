@@ -6,7 +6,7 @@ if(!isset($_SESSION['UserData']['Username'])){
 }
 ?>
 <?php $Title = "Active Users | Admin - Shop4U"?>
-<?php include('partial/adminmenu.php')?>
+<?php include('../partial/adminmenu.php')?>
 <!-- content here -->
 <main class="flex-shrink-0">
     <div class="container">
@@ -21,13 +21,13 @@ if(!isset($_SESSION['UserData']['Username'])){
     <div class="container ">
         <nav class="navbar navbar-light bg-light">
           <span class="justify-content-start">
-          <a class="fs-4 text-dark text-decoration-none" href="../adduser.php"><button class="btn btn-lg btn-secondary">Add an user</button></a>
-          <a class="fs-4 text-dark text-decoration-none" href="../adminblock.php"><button class="btn btn-lg btn-secondary">Blocked users</button></a>
-          <a class="fs-4 text-dark text-decoration-none" href="../admindelete.php"><button class="btn btn-lg btn-secondary">Deleted users</button></a>
+          <a class="fs-4 text-dark text-decoration-none" href="adduser.php"><button class="btn btn-lg btn-secondary">Add an user</button></a>
+          <a class="fs-4 text-dark text-decoration-none" href="adminblock.php"><button class="btn btn-lg btn-secondary">Blocked users</button></a>
+          <a class="fs-4 text-dark text-decoration-none" href="admindelete.php"><button class="btn btn-lg btn-secondary">Deleted users</button></a>
         </span>
         <span class="justify-content-end">
-            <form class="form input-group" action="../adminsearchuser.php" method="POST">
-                <input class="form-control" type="text" placeholder="Search" name="search" required>
+            <form class="form input-group" action="adminsearchuser.php" method="POST">
+                <input class="form-control" type="text" placeholder="Search" name="search"  required>
                 <span>&nbsp;&nbsp;</span>
                 <button class="btn btn-lg btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass"></span>
                     Search</button>
@@ -50,7 +50,7 @@ if(!isset($_SESSION['UserData']['Username'])){
                     </tr>
                 </thead>
                 <tbody>
-                    <?php include('db/adminuserconfig.php') ?>
+                    <?php include('../db/adminuserconfig.php') ?>
                 </tbody>
             </table>
         </div>
@@ -58,4 +58,4 @@ if(!isset($_SESSION['UserData']['Username'])){
 
 </main>
 <!-- content end-->
-<?php include('partial/footer.php')?>
+<?php include('../partial/footer.php')?>

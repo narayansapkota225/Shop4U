@@ -28,7 +28,7 @@ if($res == TRUE){
                 <td scope="row"><?php echo $role; ?></td>
                 <td scope="row"><?php echo $email; ?></td>
                 <td scope="row">
-                    <a href="../unblockuser.php?update=<?php echo $id; ?>"><span class="text-black fa-solid fa-eye-slash"></span></a>
+                    <a href="../admin/unblockuser.php?update=<?php echo $id; ?>"><span class="text-black fa-solid fa-eye-slash" title="unblock"></span></a>
                 </td>
             </tr>                
 

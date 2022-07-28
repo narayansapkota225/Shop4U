@@ -1,16 +1,16 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:../adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
 <?php $Title = "Add User | Admin - Shop4U"?>
-<?php include('partial/adminmenu.php')?>
+<?php include('../partial/adminmenu.php')?>
 <!-- content here -->
 <div class="container">
     <div class="container" style="margin-top: 40px">
-        <a href="../adminuser.php"><button class="btn btn-lg btn-outline-primary" type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
+        <a href="adminuser.php"><button class="btn btn-lg btn-outline-primary" type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
     </div>
     <div class="col-md-6 col-sm-21 shadow-lg p-5 rounded" style="margin-top: 40px">
         <h3 >Add User</h3>
@@ -114,4 +114,4 @@ if(!isset($_SESSION['UserData']['Username'])){
     </div>
 </div>
 <!-- content end-->
-<?php include('partial/footer.php')?>
+<?php include('../partial/footer.php')?>
