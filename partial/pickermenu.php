@@ -23,7 +23,7 @@
       <div class="navbar-nav">
         <a class="nav-link" href="#">Order</a>
         <a class="nav-link" href="#">History</a>
-        <a class="nav-link" href="#">Profile</a>
+        <a class="nav-link" href="../picker/profile.php">Profile</a>
         <a class="nav-link" href="#">Reset Password</a>
       </div>
     </div>
