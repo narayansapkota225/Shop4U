@@ -15,16 +15,16 @@
     <!-- menu start here  -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="../picker/">Home</a>
+    <a class="navbar-brand fs-4" href="../picker/">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="#">Order</a>
-        <a class="nav-link" href="#">History</a>
-        <a class="nav-link" href="../picker/profile.php">Profile</a>
-        <a class="nav-link" href="#">Reset Password</a>
+        <a class="nav-link fs-4" href="#">Order</a>
+        <a class="nav-link fs-4" href="#">History</a>
+        <a class="nav-link fs-4" href="../picker/profile.php">Profile</a>
+        <a class="nav-link fs-4" href="../picker/resetpwd.php">Reset Password</a>
       </div>
     </div>
   </div>

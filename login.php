@@ -2,7 +2,7 @@
 <?php include('partial/menu.php')?>
 
  <!-- login container start-->
- <div class="container-fluid vh-10" style="margin-top:10px">
+ <div class="container-fluid vh-100" style="margin-top:10px">
             <div class="" style="margin-top:40px">
                 <div class="rounded d-flex justify-content-center">
                     <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">

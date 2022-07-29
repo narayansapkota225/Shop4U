@@ -1,5 +1,5 @@
 <?php $Title = "Forgot Password - Shop4U"?>
-<?php include('partial/menu.php')?>
+<?php include('partial/regis.php')?>
 <!-- reset password start here -->
 <div class="container-fluid vh-100">
     <div class="" style="margin-top:200px">

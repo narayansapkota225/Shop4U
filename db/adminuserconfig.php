@@ -30,7 +30,7 @@ if($res == TRUE){
                 <td scope="row">
                     <a href="../admin/updateuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-pen-to-square" title="Update user"></span></a>
                     <a href="../admin/blockuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-eye" title="Block user"></span></a>
-                    <span style="padding:10px;" class="text-dark fa-solid fa-key" title="Reset password"></span>
+                    <a href="../admin/resetuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-key" title="Reset password"></span></a>
                     <a href="../admin/deleteuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-danger fa-solid fa-trash" title="Delete user"></span></a>
                 </td>
             </tr>                
