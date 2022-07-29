@@ -41,7 +41,7 @@
                                 <p class="text-center mt-5">Don't have an account?
                                     <a href="../signup.php"><span class="text-primary">Sign Up</span></a>
                                 </p>
-                                <a href="../resetpass.php"><p class="text-center text-primary">Forgot your password?</p></a>
+                                <a href="../forgot-password.php"><p class="text-center text-primary">Forgot your password?</p></a>
                             </div>
                         </form>
                     </div>
