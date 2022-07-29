@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query ($conn,$sql);
 
         if($result){
-            header("Location: ../adminuser.php? result=Account has been Deleted");
+            header("Location: ../admin/adminuser.php? result=Account has been Deleted");
         }
     }
 }

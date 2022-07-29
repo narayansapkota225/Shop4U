@@ -82,7 +82,7 @@
                         <label class="form-label"><span class="fa-solid fa-key"></span> Password</label>
                         <input type="password" class="form-control" name="pswd" 
                         pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
-                        oninvalid="setCustomValidity('Password must contain UpperCase, LowerCase, Number/SpecialCharacter and Min 8 Characters')"
+                        oninvalid="setCustomValidity('Password must contain UpperCase, LowerCase, Number/SpecialCharacter and Min 8 Characters. Example password: J1Smith1&3')"
                         onchange="try{setCustomValidity('')}catch(e){}" required="required">
                     </div>
                     <div class="col-md-6">

@@ -40,10 +40,10 @@ if (isset($_POST['uname']) && isset($_POST['passwd'])) {
                 if ($_SESSION['suspended'] == 1){
                 header("Location: ../login.php? error=Account is Restricted Please Contact Administrator");
                 }else if ($_SESSION['role'] == 1 ) {
-                header("Location: ../user.php");
+                header("Location: ../shopper/");
                 }
                 else if ($_SESSION['role'] == 2) {
-                    header("Location: ../picker.php");
+                    header("Location: ../picker/");
                 }
                 exit();
 

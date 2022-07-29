@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			$result = mysqli_query($conn, $sql);
 	
 			if ($result) {
-				header("Location: ../adminuser.php? result=Account has been Successfully Created");
+				header("Location: ../admin/adminuser.php? result=Account has been Successfully Created");
 			}
 		} else if(($role == "Picker")){
             $sql = "INSERT INTO `user` ( `role`,`rolename`,`suspended`,`email`,
@@ -55,19 +55,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
-            header("Location: ../adminuser.php? result= Account has been Successfully Created");
+            header("Location: ../admin/adminuser.php? result= Account has been Successfully Created");
         }
     }
         }
 		else {
-			header("Location: ../adduser.php? error=Password does not Match");
+			header("Location: ../admin/adduser.php? error=Password does not Match");
 		}	
     
 	}// end if
 	
 if($num>0)
 {
-	header("Location: ../adduser.php? error=Email is already Exist");
+	header("Location: ../admin/adduser.php? error=Email is already Exist");
 }
 	
 }//end if

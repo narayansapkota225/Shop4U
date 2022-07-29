@@ -6,20 +6,20 @@ if(!isset($_SESSION['UserData']['Username'])){
 }
 ?>
 <?php $Title = "Update User | Admin - Shop4U"?>
-<?php include('partial/adminmenu.php')?>
+<?php include('../partial/adminmenu.php')?>
 <!-- content start here -->
 <div class="container">
     <div class="container" style="margin-top: 40px">
-        <a href="../adminuser.php"><button class="btn btn-primary " type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
+        <a href="../admin/adminuser.php"><button class="btn btn-primary " type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
     </div>
     <div class="col-md-6 col-sm-21 shadow-lg p-5 rounded" style="margin-top: 40px">
         <h3 >Update User</h3>
         <?php if (isset($_GET['error'])) { ?>
         <p class="alert alert-danger alert-dismissible fade show"><strong><?php echo $_GET['error']; ?></strong></p>
         <?php } ?>
-        <?php include ('db/getuserconfig.php')?>
+        <?php include ('../db/getuserconfig.php')?>
         <div class="container">
-            <form class="row g-3 needs-validation" action="db/updateuserconfig.php" method="POST">
+            <form class="row g-3 needs-validation" action="../db/updateuserconfig.php" method="POST">
                     <div class="col-md-6">
                         <label class="form-label">First name</label>
                         <input type="text" value="<?php echo $fname; ?>" class="form-control" name="fname"
@@ -103,4 +103,4 @@ if(!isset($_SESSION['UserData']['Username'])){
     </div>
 </div>
 <!-- content end here -->
-<?php include('partial/footer.php')?>
+<?php include('../partial/footer.php')?>

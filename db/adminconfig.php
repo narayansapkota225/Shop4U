@@ -13,11 +13,11 @@
                 if (isset($logins[$Username]) && $logins[$Username] == $Password){
                         /* Success: Set session variables and redirect to Protected page  */
                         $_SESSION['UserData']['Username']=$logins[$Username];
-                        header("location:../admin.php");
+                        header("location:../admin/");
                         exit;
                 } else {
                         /*Unsuccessful attempt: Set error message */
-                        header("location:../adminlogin.php?error=Incorect User name or password");
+                        header("location:../admin/adminlogin.php?error=Incorect User name or password");
                 }
         }
 ?>

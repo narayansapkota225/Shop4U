@@ -1,12 +1,12 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:../adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
 <?php $Title = "Home | Admin - Shop4U"?>
-<?php include('partial/adminmenu.php')?>
+<?php include('../partial/adminmenu.php')?>
 <!-- content here -->
 <main class="flex-shrink-0">
 <div class="container">
@@ -27,4 +27,4 @@ if(!isset($_SESSION['UserData']['Username'])){
       }
     }
   </script> -->
-<?php include('partial/footer.php')?>
+<?php include('../partial/footer.php')?>
