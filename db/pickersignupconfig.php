@@ -47,13 +47,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 		}
 		else {
-			header("Location: ../pickersignup.php? error=Password does not Match");
+			header("Location: ../signup.php? error=Password does not Match");
 		}	
 	}// end if
 	
 if($num>0)
 {
-	header("Location: ../pickersignup.php? error=Email is already Exist");
+	header("Location: ../signup.php? error=Email is already Exist");
 }
 	
 }//end if

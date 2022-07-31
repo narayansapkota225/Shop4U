@@ -30,12 +30,12 @@
                     <a class="nav-link fs-4" href="#">Product</a>
                     <a class="nav-link fs-4" href="../shop.php">Shop</a>
 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle fs-4" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item fs-4 nav-link" href="../pickersignup.php">Picker Signup</a>
                             </li>
-                        </ul>
+                        </ul> -->
 
                         <!--<a class="nav-link dropdown-toggle fs-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Picker

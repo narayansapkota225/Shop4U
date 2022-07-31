@@ -21,7 +21,7 @@ if(!isset($_SESSION['UserData']['Username'])){
     <div class="container ">
         <nav class="navbar navbar-light bg-light">
           <span class="justify-content-start">
-          <a class="fs-4 text-dark text-decoration-none" href="adduser.php"><button class="btn btn-lg btn-secondary">Add an user</button></a>
+          <a class="fs-4 text-dark text-decoration-none" href="adduser.php"><button class="btn btn-lg btn-secondary" >Add an user</button></a>
           <a class="fs-4 text-dark text-decoration-none" href="adminblock.php"><button class="btn btn-lg btn-secondary">Blocked users</button></a>
           <a class="fs-4 text-dark text-decoration-none" href="admindelete.php"><button class="btn btn-lg btn-secondary">Deleted users</button></a>
         </span>
@@ -35,7 +35,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         </span>
         </nav>
         <div class="table-responsive mt-2">
-            <table class="table table-striped caption-top">
+            <table id="user" class="table table-striped caption-top">
                 <caption>
                     <h3>List of Active Users</h3>
                 </caption>
@@ -57,5 +57,11 @@ if(!isset($_SESSION['UserData']['Username'])){
     </div>
 
 </main>
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
 <!-- content end-->
 <?php include('../partial/footer.php')?>

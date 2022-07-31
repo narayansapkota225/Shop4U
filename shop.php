@@ -10,7 +10,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="images/burger.jpg" class="rounded bd-placeholder-img"></img>
+                        <img src="images/burger.jpg" class="rounded bd-placeholder-img" ></img>
                         <div class="card-body">
                             <p class="card-text">we are selling this grocery stuff and many more to sell. Please come and check this shop</p>
                             <div class="btn-group">

@@ -28,13 +28,13 @@ if($res == TRUE){
                 <td scope="row"><?php echo $role; ?></td>
                 <td scope="row"><?php echo $email; ?></td>
                 <td scope="row">
-                    <a href="../admin/updateuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-pen-to-square" title="Update user"></span></a>
-                    <a href="../admin/blockuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-eye" title="Block user"></span></a>
-                    <a href="../admin/resetuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-key" title="Reset password"></span></a>
-                    <a href="../admin/deleteuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-danger fa-solid fa-trash" title="Delete user"></span></a>
+                    <a href="../admin/updateuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update user"></span></a>
+                    <a href="../admin/blockuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-eye" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Block user"></span></a>
+                    <a href="../admin/resetuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-dark fa-solid fa-key" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Reset password"></span></a>
+                    <a href="../admin/deleteuser.php?update=<?php echo $id; ?>"><span style="padding:10px;" class="text-danger fa-solid fa-trash" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete user"></span></a>
                 </td>
             </tr>                
-
+    
             <?php
         } 
 
