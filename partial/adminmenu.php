@@ -25,6 +25,7 @@
       <div class="navbar-nav">
         <a class="nav-link" href="#">Order</a>
         <a class="nav-link" href="#">Product</a>
+        <a class="nav-link" href="../admin/category.php">Category</a>
         <a class="nav-link" href="../admin/adminuser.php">User</a>
       </div>
     </div>
