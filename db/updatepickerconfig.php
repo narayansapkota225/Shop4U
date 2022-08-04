@@ -8,8 +8,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	
     // get data 
     $id = $_POST["uid"];
-	$fname = $_POST["fname"];
-    $lname= $_POST["lname"];
     $phno= $_POST["phno"];
     $email= $_POST["email"];
     $adds= $_POST["adds"];
@@ -30,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
    
            if(($count == 1)){
                
-               $sql="UPDATE user SET firstname='$fname', lastname='$lname', phone='$phno', email='$email',
+               $sql="UPDATE user SET phone='$phno',
                address='$adds', city='$city', state='$state', postCode='$pocode', transportation='$trans',
                license='$lic'  WHERE id='$id'";
    
@@ -39,5 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                        header("Location: ../picker/index.php? result=Profile has been Successfully Updated");
                    }
                } 
+           }else{
+            header("Location: ../picker/profile.php? error=Something is wrong please try again");
            }
         }

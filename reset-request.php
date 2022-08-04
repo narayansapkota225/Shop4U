@@ -8,7 +8,7 @@ if (isset($_POST["email"])) {
 
     $expires = date("U") + 900;
 
-    require 'db/config.php';
+    require './db/config.php';
 
     $userEmail = $_POST["email"];
 
@@ -25,8 +25,8 @@ if (isset($_POST["email"])) {
 
     $sql = "INSERT INTO pwdReset (pwdResetEmail, pwdResetSelector, pwdResetToken, pwdResetExpires) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo 'There was an error!';echo 'post successful!';
+    if (!mysqli_stmt_prepare($stmt, $sql)) {echo "post successful!";
+        echo 'There was an error!';
         exit();
     } else {
         $hashedToken = password_hash($token, PASSWORD_DEFAULT);
@@ -37,7 +37,7 @@ if (isset($_POST["email"])) {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 
-    $to = $userEmail;
+    $to_email = $userEmail;
 
     $subject = 'Reset your Shop4U password!';
 
@@ -45,10 +45,10 @@ if (isset($_POST["email"])) {
     $message .= '<p>Here is your password reset link: </br>';
     $message .= '<a href="'. $url . '">' . $url . '</a></p>';
 
-    $headers = "From: Shop4U <narayan225@outlook.com>\r\n";
+    $headers = "From: <narayan225@outlook.com>\r\n";
     $headers .= "Content-Type; text/html\r\n";
 
-    mail($to, $subject, $message, $headers);
+    mail($to_email, $subject, $message, $headers);
 
     header("Location: forgot-password.php?reset=success");
 

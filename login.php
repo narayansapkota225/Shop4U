@@ -14,6 +14,13 @@
                             <?php if (isset($_GET['result'])) { ?>
                             <p class="alert alert-success alert-dismissible fade show"><strong><?php echo $_GET['result']; ?></strong></p>
                             <?php } ?>
+                            <?php
+                            if (isset($_GET["newpwd"])) {
+                                if ($_GET["newpwd"] == "passwordupdated") {
+                                    echo '<p class="alert alert-success alert-dismissible fade show">Your password has been reset!</p>';
+                                }
+                            }
+                            ?>
                         </div>
                         <form action="../db/loginconfig.php" method="POST">
                             <div class="p-4">

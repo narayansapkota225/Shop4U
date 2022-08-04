@@ -19,8 +19,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==1
                                 <div class="container">
                                     <p class="text-center"><strong>Are you sure you want to update your profile </strong></p>
                                     <input type="hidden" value="<?php echo $_SESSION["uid"]; ?>" name="uid">
-                                    <input type="hidden" value="<?php echo $_SESSION["fname"]; ?>" name="fname">
-                                    <input type="hidden" value="<?php echo $_SESSION["lname"]; ?>" name="lname">
                                     <input type="hidden" value="<?php echo $_SESSION["phno"]; ?>" name="phno">
                                     <input type="hidden" value="<?php echo $_SESSION["email"]; ?>" name="email">
                                     <input type="hidden" value="<?php echo $_SESSION["adds"]; ?>" name="adds">

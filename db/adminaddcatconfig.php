@@ -8,6 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //get post value
     $title=$_POST['title'];
+    $img_name = $_FILES['image']['name'];
 
     // check the feature is selected
     if(isset($_POST['feature'])){
@@ -26,32 +27,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //check if image is selected
     // print_r($_FILES['image']);
-    if(isset($_FILES['image']['name'])){
+    if($img_name){
 
-        $img_name = $_FILES['image']['name'];
         $srcpath = $_FILES['image']['tmp_name'];
-        $despath = "../images/category/".$img_name;
+        $img_type = $_FILES['image']['type'];
+        $namecap = explode(".", $img_name);
+        $ext = strtolower(end($namecap));
+        $allowedfileExtensions = array('jpg', 'png', 'jpeg');
 
-    //     //upload image
-        $upload = move_uploaded_file($srcpath, $despath);
+    //     //check for extention
+        if (in_array($ext, $allowedfileExtensions))
+        {
+        // directory in which the uploaded file will be moved
+        $despath = '../images/category/'.$img_name;
 
-        if($upload==false){
-            header("Location:../admin/addcategory.php? error=Failed to Upload Image");
-            die();
+            //upload image
+            if(move_uploaded_file($srcpath, $despath)) 
+            {
+                // insert into db
+                $sql="INSERT INTO category (title , image, feature, active) VALUES (?, ?, ?, ?) ";
+                $stmt = mysqli_stmt_init($conn);
+    
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("Location:../admin/addcategory.php? error=Something wrong");
+                    exit();
+                } else {
+                    mysqli_stmt_bind_param($stmt, "ssss", $title, $img_name, $feature, $active);
+                    mysqli_stmt_execute($stmt);
+                    header("Location:../admin/category.php? result=Category has been Successfully added");
+                }
+            } else  {
+                header("Location:../admin/addcategory.php? error=Failed to Upload Image");
+                die();
+            }
         }
 
-    }else{
-        $img_name="";
+    }else {
+        header("Location:../admin/addcategory.php? error=No Imgae to upload");
+        die();
     }
-
-
-    // insert into db
-    $sql="INSERT INTO category SET title='$title', feature='$feature', active='$active'";
-    $res = mysqli_query($conn, $sql);
-
-    if($res){
-        header("Location:../admin/category.php? result=Category has been Successfully added");
-    }
-
-
 }

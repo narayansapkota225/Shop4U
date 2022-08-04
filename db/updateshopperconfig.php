@@ -6,8 +6,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	include "config.php";
 	
     $id = $_POST["uid"];
-	$fname = $_POST["fname"];
-    $lname= $_POST["lname"];
     $phno= $_POST["phno"];
     $email= $_POST["email"];
     $adds= $_POST["adds"];
@@ -27,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if(($count == 1)){
             
-            $sql="UPDATE user SET firstname='$fname', lastname='$lname', phone='$phno', email='$email',
+            $sql="UPDATE user SET phone='$phno',
             address='$adds', city='$city', state='$state', postCode='$pocode'  WHERE id='$id' ";
 
             $result = mysqli_query($conn,$sql);
@@ -35,5 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: ../shopper/index.php? result=Profile has been Successfully Updated");
                 }
             } 
+        }else{
+            header("Location: ../shopper/profile.php? error=Something is wrong please try again");
         }
     }

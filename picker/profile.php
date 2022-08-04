@@ -25,13 +25,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==2
                     <div class="col-md-6">
                         <label class="form-label">First name</label>
                         <input type="text" value="<?php echo $fname; ?>" class="form-control" name="fname"
-                            required="required">
+                            required="required" readonly>
                         <input type="hidden" value="<?php echo $id; ?>" name="uid">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Last name</label>
                         <input type="text" value="<?php echo $lname; ?>" class="form-control" name="lname"
-                            required="required">
+                            required="required" readonly>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label"><span class="fa fa-phone"></span> Phone Number</label>
@@ -45,7 +45,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==2
                         <input type="email" value="<?php echo $email; ?>" name="email" class="form-control" 
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                         oninvalid="setCustomValidity('Please enter Valid Email Address')"
-                        onchange="try{setCustomValidity('')}catch(e){}" required="required">
+                        onchange="try{setCustomValidity('')}catch(e){}" required="required" readonly>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Address</label>
@@ -89,8 +89,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role']==2
                         <input type="text" value="<?php echo $lic; ?>" class="form-control" name="lic">
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label">Role: </label>
-                        <label class="form-label"><?php echo $role; ?></label>
+                        <div class="input-group">
+                            <label class="input-group-text">Role: </label>
+                            <input type="text" value="<?php echo $role; ?>" class="form-control" name="role"
+                                required="required" disabled readonly>
+                        </div>
                     </div>
                     <p class="col-12 text-center">
                         <button class="btn btn-info " type="submit"><span class="fa fa-paper-plane"></span>
