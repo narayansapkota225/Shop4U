@@ -34,25 +34,95 @@ if(!isset($_SESSION['UserData']['Username'])){
             </form>
         </span>
         </nav>
-        <div class="table-responsive mt-2">
-            <table id="user" class="table table-striped caption-top">
-                <caption>
-                    <h3>List of Active Users</h3>
-                </caption>
-                <thead class="bg-secondary text-light">
-                    <tr>
-                        <th scope="col">No.</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php include('../db/adminuserconfig.php') ?>
-                </tbody>
-            </table>
+        <!-- form tab -->
+        <div class=" col-sm-21 shadow-lg p-5 bg-light rounded">
+        <ul class="nav bg-white nav-pills rounded-pill nav-fill mb-3">
+            <li class="nav-item">
+            <a class="nav-link active rounded-pill " data-bs-toggle="pill" data-bs-target="#all" role="tab" >All</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#shopper" role="tab" >Shopper</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#picker" role="tab" >Picker</a>
+            </li>
+        </ul>
+        </div>
+        <!-- form tab -->
+
+        <!-- form content -->
+        <div class="tab-content">
+        <!-- all user form content -->
+        <div id="all" class="tab-pane fade show active">   
+            <div class="table-responsive mt-2">
+                <table id="user" class="table table-striped caption-top">
+                    <caption>
+                        <h3>List of Active Users</h3>
+                    </caption>
+                    <thead class="bg-secondary text-light">
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php include('../db/adminuserconfig.php') ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- shopper content -->
+        <div id="shopper" class="tab-pane fade ">   
+            <div class="table-responsive mt-2">
+                <table id="user" class="table table-striped caption-top">
+                    <caption>
+                        <h3>List of Active Shopper</h3>
+                    </caption>
+                    <thead class="bg-secondary text-light">
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php include('../db/adminshopperconfig.php') ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- picker content -->
+        <div id="picker" class="tab-pane fade ">   
+            <div class="table-responsive mt-2">
+                <table id="user" class="table table-striped caption-top">
+                    <caption>
+                        <h3>List of Active Picker</h3>
+                    </caption>
+                    <thead class="bg-secondary text-light">
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php include('../db/adminpickerconfig.php') ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         </div>
     </div>
 

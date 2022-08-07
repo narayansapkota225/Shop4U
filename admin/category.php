@@ -32,15 +32,15 @@ if(!isset($_SESSION['UserData']['Username'])){
                 <thead class="bg-secondary text-light">
                     <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Active</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php include('../db/adminuserconfig.php') ?>
+                    <?php include('../db/admincatconfig.php') ?>
                 </tbody>
             </table>
         </div>
