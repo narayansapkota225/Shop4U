@@ -19,21 +19,29 @@ if(!isset($_SESSION['UserData']['Username'])){
         <?php } ?>
     </div>
     <div class="container ">
+        <div class="col-sm-21 shadow-lg p-3 bg-light rounded">
         <nav class="navbar navbar-light bg-light">
-          <span class="justify-content-start">
-          <a class="fs-4 text-dark text-decoration-none" href="adduser.php"><button class="btn btn-lg btn-secondary" >Add an user</button></a>
-          <a class="fs-4 text-dark text-decoration-none" href="adminblock.php"><button class="btn btn-lg btn-secondary">Blocked users</button></a>
-          <a class="fs-4 text-dark text-decoration-none" href="admindelete.php"><button class="btn btn-lg btn-secondary">Deleted users</button></a>
-        </span>
-        <span class="justify-content-end">
+        <div class="d-flex flex-wrap">
+            <div class="p-2 ">
+                <a class="fs-4 text-dark text-decoration-none " href="adduser.php"><button class="btn btn-lg btn-secondary" >Add an user</button></a>
+            </div>
+            <div class="p-2"> 
+                <a class="fs-4 text-dark text-decoration-none " href="adminblock.php"><button class="btn btn-lg btn-secondary">Blocked users</button></a>
+            </div>
+            <div class="p-2 ">
+                <a class="fs-4 text-dark text-decoration-none " href="admindelete.php"><button class="btn btn-lg btn-secondary">Deleted users</button></a>
+            </div>
+        </div>
+        <div class="justify-content-end">
             <form class="form input-group" action="adminsearchuser.php" method="POST">
                 <input class="form-control" type="text" placeholder="Search" name="search"  required>
                 <span>&nbsp;&nbsp;</span>
                 <button class="btn btn-lg btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass"></span>
                     Search</button>
             </form>
-        </span>
+        </div>
         </nav>
+        </div>
         <!-- form tab -->
         <div class=" col-sm-21 shadow-lg p-5 bg-light rounded">
         <ul class="nav bg-white nav-pills rounded-pill nav-fill mb-3">

@@ -60,6 +60,57 @@
         height: 100%;
         object-fit: cover;
       }
+
+      .product:hover img {
+    opacity: 0.6
+}
+
+.product-btn {
+    width: 50px;
+    height: 50px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 400;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    z-index: 99;
+    opacity: 0
+}
+
+.product-btn:hover {
+    background: #4650dd;
+    color: #fff
+}
+
+.product:hover .product-btn {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none
+}
+
+.product:hover .cta {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1
+}
+
+.product .cta {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    -webkit-transform: translateX(0.5rem);
+    transform: translateX(0.5rem);
+    opacity: 0;
+    transition: all 0.3s
+}
     </style>
 </head>
 
