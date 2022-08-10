@@ -33,14 +33,16 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <tr>
                         <th scope="col">No.</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Image</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Feature</th>
                         <th scope="col">Active</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php include('../db/admincatconfig.php') ?>
+                    <?php include('../db/adminproductconfig.php') ?>
                 </tbody>
             </table>
         </div>

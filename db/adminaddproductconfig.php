@@ -14,7 +14,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $cat = $_POST['cat'];
 
     //check description empty
-    if(!$desc){
+    if($desc){
+        $desc = $_POST['desc'];
+    }else {
         $desc = "No Description Found";
     }
 
@@ -45,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if (in_array($ext, $allowedfileExtensions))
         {
         // directory in which the uploaded file will be moved
-        $despath = '../images/product/'.$newname; 
+        $despath = '../images/product'.$newname; 
 
             //upload image
             if(move_uploaded_file($srcpath, $despath)) 
@@ -60,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     mysqli_stmt_bind_param($stmt, "ssdsiss", $title, $desc, $price, $newname, $cat, $feature, $active);
                     mysqli_stmt_execute($stmt);
-                    header("Location:../admin/product.php? result=Category has been Successfully added");
+                    header("Location:../admin/product.php? result=Product has been Successfully added");
                 }
             } else  {
                 header("Location:../admin/addproduct.php? error=Failed to Upload Image");
@@ -69,6 +71,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
     }else {
+        // set the name to no-image.png
+        $img_name = "no-image.png";
         // insert into db
         $sql="INSERT INTO product (title , description, price, image, category_id, feature, active) VALUES (?, ?, ?, ?, ?, ?, ?) ";
         $stmt = mysqli_stmt_init($conn);
@@ -77,9 +81,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location:../admin/addproduct.php? error=Something wrong");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "ssdsiss", $title, $desc, $price, $newname, $cat, $feature, $active);
+            mysqli_stmt_bind_param($stmt, "ssdsiss", $title, $desc, $price, $img_name, $cat, $feature, $active);
             mysqli_stmt_execute($stmt);
-            header("Location:../admin/product.php? result=Category has been Successfully added");
+            header("Location:../admin/product.php? result=Product has been Successfully added");
         }
     }
 
