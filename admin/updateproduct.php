@@ -22,7 +22,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         <?php } ?>
         <?php include ('../db/getproconfig.php')?>
         <div class="container">
-        <form class="row g-3 needs-validation" action="../db/#" method="POST" enctype="multipart/form-data">
+        <form class="row g-3 needs-validation" action="../db/updateproductconfig.php" method="POST" enctype="multipart/form-data">
                     <div class="col-md-10">
                         <label class="form-label">Title</label>
                         <input type="text" class="form-control" name="title" value="<?php echo $title;?>"
@@ -45,7 +45,7 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <div class="col-md-10">
                         <label class="form-label">Current Image</label>
                         <div class="container">
-                            <img src="../images/product<?php echo $image;?>" width="100px">
+                            <img src="../images/product/<?php echo $image;?>" width="100px">
                         </div>
                     </div>
                     <div class="col-md-10">

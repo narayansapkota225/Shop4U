@@ -30,7 +30,7 @@ if($res == TRUE){
                 <th scope="row"><?php echo $sn++; ?></th>
                 <td scope="row"><?php echo $title; ?></td>
                 <td scope="row">$<?php echo $price; ?></td>
-                <td scope="row"><img src="../images/product<?php echo $image; ?>" width="100px"> </td>
+                <td scope="row"><img src="../images/product/<?php echo $image; ?>" width="100px"> </td>
                 <td scope="row"><?php echo $cat_title; ?></td>
                 <td scope="row"><?php echo $feature; ?></td>
                 <td scope="row"><?php echo $active; ?></td>

@@ -7,6 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	include "config.php";
     
     // get data
+    $id = $_POST['id'];
     $title =$_POST['title'];
     $desc = $_POST['desc'];
     $price = $_POST['price'];
@@ -53,37 +54,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if(move_uploaded_file($srcpath, $despath)) 
             {
                 // insert into db
-                $sql="INSERT INTO product (title , description, price, image, category_id, feature, active) VALUES (?, ?, ?, ?, ?, ?, ?) ";
+                $sql="UPDATE product SET title=?, description=?, price=?, image=?, category_id=?, feature=?, active=? WHERE id=$id";
                 $stmt = mysqli_stmt_init($conn);
     
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location:../admin/addproduct.php? error=Something wrong");
+                    header("Location:../admin/updateproduct.php? update=$id&error=Something wrong");
                     exit();
                 } else {
                     mysqli_stmt_bind_param($stmt, "ssdsiss", $title, $desc, $price, $newname, $cat, $feature, $active);
                     mysqli_stmt_execute($stmt);
-                    header("Location:../admin/product.php? result=Product has been Successfully added");
+                    header("Location:../admin/product.php? result=Product has been Successfully updated");
                 }
             } else  {
-                header("Location:../admin/addproduct.php? error=Failed to Upload Image");
+                header("Location:../admin/updateproduct.php? update=$id&error=Failed to Upload Image");
                 die();
             }
         }
 
     }else {
-        // set the name to no-image.png
-        $img_name = "no-image.png";
+        // update without the image
         // insert into db
-        $sql="INSERT INTO product (title , description, price, image, category_id, feature, active) VALUES (?, ?, ?, ?, ?, ?, ?) ";
+        $sql="UPDATE product SET title=?, description=?, price=?, category_id=?, feature=?, active=? WHERE id=$id";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location:../admin/addproduct.php? error=Something wrong");
+            header("Location:../admin/updateproduct.php? update=$id&error=Something wrong");
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "ssdsiss", $title, $desc, $price, $img_name, $cat, $feature, $active);
+            mysqli_stmt_bind_param($stmt, "ssdiss", $title, $desc, $price, $cat, $feature, $active);
             mysqli_stmt_execute($stmt);
-            header("Location:../admin/product.php? result=Product has been Successfully added");
+            header("Location:../admin/product.php? result=Product has been Successfully updated");
         }
     }
 
