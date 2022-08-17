@@ -2,10 +2,10 @@
 <?php include('partial/menu.php')?>
 
  <!-- login container start-->
- <div class="container-fluid vh-100" style="margin-top:10px">
-            <div class="" style="margin-top:40px">
+ <div class="container-fluid">
+            <div class="" style="margin-top:30px;">
                 <div class="rounded d-flex justify-content-center">
-                    <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+                    <div class="col-md-5 shadow-lg p-5 bg-light">
                         <div class="text-center">
                             <h3 class="text-primary">Log in</h3>
                             <?php if (isset($_GET['error'])) { ?>

@@ -14,7 +14,7 @@
             <div class="row">
                 <!-- category selection -->
                 <div class="col-xl-2 col-lg-3 order-1 order-lg-1">
-                    <h5 class="mb-4">Shop by Category</h5>
+                    <h5 class="mb-4 d-flex justify-content-center">Shop by Category</h5>
                     <div class="d-flex justify-content-center">
                         <div class="nav flex-column nav-pills me-3" role="tablist" aria-orientation="vertical">
                             <button class="btn btn-lg nav-link <?php if (isset($_GET['all'])){ echo "show active";}?>"  data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab" aria-selected="true">All</button>
