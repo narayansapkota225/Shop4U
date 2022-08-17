@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$cpswd = $_POST["cpswd"];
 			
 	
-	$sql = "Select * from user where email='$email'";
+	$sql = "Select * FROM user WHERE email='$email'";
 	
 	$result = mysqli_query($conn, $sql);
 	

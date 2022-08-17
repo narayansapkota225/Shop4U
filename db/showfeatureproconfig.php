@@ -2,7 +2,7 @@
 
 require "config.php";
 
-$sql="SELECT * FROM product WHERE feature='yes' AND active='yes' LIMIT 5";
+$sql="SELECT * FROM product WHERE feature='yes' AND active='yes'";
 $res=mysqli_query($conn,$sql);
 
 $count = mysqli_num_rows($res);
