@@ -4,7 +4,7 @@ if (isset($_POST["email"])) {
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
 
-    $url = "sho4udevtest.australiaeast.cloudapp.azure.com/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $url = "https://shop4uapps.com/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
     $expires = date("U") + 900;
 
@@ -41,12 +41,12 @@ if (isset($_POST["email"])) {
 
     $subject = 'Reset your Shop4U password!';
 
-    $message = '<p>We have received a password reset request. The link to reset your password is. You can click the link or copy and paste it in your browser. If you did not make this request, please ignore this message.';
-    $message .= '<p>Here is your password reset link: </br>';
+    $message = '<p>We have received a password reset request. The link to reset your password is. You can click the link or copy and paste it in your browser. If you did not make this request, please ignore this message.</p>';
+    $message .= '<p>Here is your password reset link: <br>';
     $message .= '<a href="'. $url . '">' . $url . '</a></p>';
 
-    $headers = "From: <narayan225@outlook.com>\r\n";
-    $headers .= "Content-Type; text/html\r\n";
+    $headers = "From: Shop4U Admin <aqcdpr455@gmail.com>\r\n";
+    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
     mail($to_email, $subject, $message, $headers);
 

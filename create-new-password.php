@@ -12,26 +12,27 @@
                     if (empty($selector) || empty($validator)) {
                         echo "Your request could not be validated!";
                     } else {
-                        if (ctype_xdigit($selector) !== false && ctype_xdigit($validator !== false)) {
+                        if (ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false) {
                             
                             ?>
 
-                            <form action="reset-password.php" method="post">
-                                <input type="hidden" name="selector" value="<?php echo $selector; ?>">
-                                <input type="hidden" name="validator" value="<?php echo $validator; ?>">
-                                <input type="password" name="pwd" placeholder="Enter a new password..">
-                                <input type="password" name="pwd-repeat" placeholder="Enter the password again..">
-                                <button type="submit" name="reset-password-submit">Reset Password</button>
-                            <?php
-
-
-                        }
+                <form class="row g-3 needs-validation" action="reset-password.php" method="post">
+                    <input type="hidden" name="selector" value="<?php echo $selector; ?>">
+                    <input type="hidden" name="validator" value="<?php echo $validator; ?>">
+                    <label class="form-label">New Password</label>
+                    <input type="password" name="pwd" placeholder="Enter a new password..">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" name="pwd-repeat" placeholder="Enter the password again..">
+                    <button type="submit" name="reset-password-submit">Reset Password</button>
+                </form>
+                <?php
+                }
                         
                     }
                     
                 ?>
             </div>
-        </div>  
+        </div>
     </div>
 </div>
 <!-- reset password end here -->
