@@ -1,6 +1,10 @@
 <?php $Title = "Home Page - Shop4U"?>
 <?php include('./partial/regis.php')?>
 <!-- content start here -->
+<!-- modal -->
+<!-- Modal -->
+<?php include('db/showpromodalconfig.php')?>
+<!-- modal -->
  <main class="flex-shrink-0">
     <div class="container">
         <h1 class="mt-5">Welcome Shoppers</h1>
@@ -8,8 +12,8 @@
     </div>
     <br></br>
     <div class="container">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
+        <form class="d-flex" action="searchproduct.php" method="POST">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" required>
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
     </div>
@@ -20,24 +24,10 @@
           <p class="text-muted">Browse Category featuring this week</p>
         </header>
         <div class="row">
-            <div class="col-lg-4">
-                <img src="images/burger.jpg" width="300" height="300"></img>
-                <h2>hello</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                <p><a class="btn btn-secondary" href="#">More..</a></p>
-            </div>
-            <div class="col-lg-4">
-                <img src="images/burger.jpg" width="300" height="300"></img>
-                <h2>hello</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                <p><a class="btn btn-secondary" href="#">More..</a></p>
-            </div>
-            <div class="col-lg-4">
-                <img src="images/burger.jpg" width="300" height="300"></img>
-                <h2>hello</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                <p><a class="btn btn-secondary" href="#">More..</a></p>
-            </div>
+            <?php include('db/showfeaturecatconfig.php')?>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p><a class="btn btn-secondary" href="categories.php">More..</a></p>
         </div>
     </div>
     <section class="py-5 bg-center bg-cover" style="background-image: url(images/divider-bg.0d7f8f0b.jpg); background-attachment: fixed; background-size: cover; background-repeat: no-repeat; background-position: right center;">
@@ -57,152 +47,9 @@
           <h2 class="mb-0">Featured Product</h2>
           <p class="text-muted">Browse Products featuring this week</p>
         </header>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="product">
-                        <img src="images/burger.jpg" width="300" >
-                        <div class="cta shadow d-inline-block">
-                            <a class="product-btn" href="#productView" data-bs-toggle="modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                                </svg>
-                            </a>
-                            <a class="product-btn" href="login.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                                </svg>
-                            </a>
-                        </div> 
-                        </img>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product">
-                        <img src="images/burger.jpg" width="300" >
-                        <div class="cta shadow d-inline-block">
-                            <a class="product-btn" href="#productView" data-bs-toggle="modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                                </svg>
-                            </a>
-                            <a class="product-btn" href="login.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                                </svg>
-                            </a>
-                        </div> 
-                        </img>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product">
-                        <img src="images/burger.jpg" width="300" >
-                        <div class="cta shadow d-inline-block">
-                            <a class="product-btn" href="#productView" data-bs-toggle="modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                                </svg>
-                            </a>
-                            <a class="product-btn" href="login.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                                </svg>
-                            </a>
-                        </div> 
-                        </img>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product">
-                        <img src="images/burger.jpg" width="300" >
-                        <div class="cta shadow d-inline-block">
-                            <a class="product-btn" href="#productView" data-bs-toggle="modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                                </svg>
-                            </a>
-                            <a class="product-btn" href="login.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                                </svg>
-                            </a>
-                        </div> 
-                        </img>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product">
-                        <img src="images/burger.jpg" width="300" >
-                        <div class="cta shadow d-inline-block">
-                            <a class="product-btn" href="#productView" data-bs-toggle="modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                                </svg>
-                            </a>
-                            <a class="product-btn" href="login.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                                </svg>
-                            </a>
-                        </div> 
-                        </img>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product">
-                        <img src="images/burger.jpg" width="300" >
-                        <div class="cta shadow d-inline-block">
-                            <a class="product-btn" href="#productView" data-bs-toggle="modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                                </svg>
-                            </a>
-                            <a class="product-btn" href="login.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                                </svg>
-                            </a>
-                        </div> 
-                        </img>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product">
-                        <img src="images/burger.jpg" width="300" >
-                        <div class="cta shadow d-inline-block">
-                            <a class="product-btn" href="#productView" data-bs-toggle="modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                                </svg>
-                            </a>
-                            <a class="product-btn" href="login.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                                </svg>
-                            </a>
-                        </div> 
-                        </img>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product">
-                        <img src="images/burger.jpg" width="300" >
-                        <div class="cta shadow d-inline-block">
-                            <a class="product-btn" href="#productView" data-bs-toggle="modal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
-                                </svg>
-                            </a>
-                            <a class="product-btn" href="login.php">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
-                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                                </svg>
-                            </a>
-                        </div> 
-                        </img>
-                    </div>
-                </div>
+        <div class="mySwiper swiper ">
+            <div class="swiper-wrapper" style="transform: translate3d(-2220px, 0px, 0px); transition-duration: 0ms;">
+                <?php include('db/showfeatureproconfig.php')?>
             </div>
             <div class="swiper-button-next" ></div>
             <div class="swiper-button-prev"></div>
@@ -271,7 +118,7 @@
             <p class="text-small text-muted mb-0">Earn extra income by picking for Shop4U. You can work anywhere and anytime whenever you like</p>
           </div>
           <div class="col-lg-6 ">
-                <a href="signup.php"><button class="btn btn-primary" id="button-addon2" type="button">Sign Up here</button><a>
+                <a href="signup.php?picker" ><button class="btn btn-primary" id="button-addon2" type="button">Sign Up here</button><a>
           </div>
         </div>
       </div>
@@ -282,8 +129,8 @@
 
 <script>
       var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 5,
+        slidesPerView: 1,
+        spaceBetween: 10,
         loop: true,
         loopFillGroupWithBlank: true,
         pagination: {
@@ -294,6 +141,20 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+        }
       });
     </script>
 <!-- content end here-->

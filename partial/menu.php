@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link fs-4" href="../categories.php">Categories</a>
-        <a class="nav-link fs-4" href="#">Product</a>
+        <a class="nav-link fs-4" href="../product.php">Product</a>
         <a class="nav-link fs-4" href="../shop.php">Shop</a>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle fs-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -15,10 +15,10 @@
                 <!-- form tab -->
                     <ul class="nav bg-white nav-pills rounded-pill nav-fill mb-3">
                         <li class="nav-item">
-                        <a class="nav-link active rounded-pill " data-bs-toggle="pill" data-bs-target="#shopper" role="tab" >Shopper</a>
+                        <a class="nav-link <?php if (isset($_GET['shopper'])){ echo "active";}?> rounded-pill " data-bs-toggle="pill" href="#shopper" role="tab" >Shopper</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link rounded-pill" data-bs-toggle="pill" data-bs-target="#picker" role="tab" >Picker</a>
+                        <a class="nav-link <?php if (isset($_GET['picker'])){ echo "active";}?> rounded-pill" data-bs-toggle="pill" href="#picker" role="tab" >Picker</a>
                         </li>
                     </ul>
                 <!-- form tab -->
@@ -27,7 +27,7 @@
                 <div class="tab-content">
 
                 <!-- shopper form content -->
-                <div id="shopper" class="tab-pane fade show active">
+                <div id="shopper" class="tab-pane fade <?php if (isset($_GET['shopper'])){ echo "show active";}?>">
                 <form class="row g-3 needs-validation" action="../db/signupconfig.php" method="POST">
                     <div class="col-md-6">
                         <label class="form-label fa-1x">First name</label>
@@ -110,7 +110,7 @@
                 <!-- shopper form end -->
 
                 <!-- picker form content -->
-                <div id="picker" class="tab-pane fade">
+                <div id="picker" class="tab-pane fade <?php if (isset($_GET['picker'])){ echo "show active";}?> ">
                 <form class="row g-3 needs-validation" action="../db/pickersignupconfig.php" method="POST">
                     <div class="col-md-6">
                         <label class="form-label">First name</label>

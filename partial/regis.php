@@ -10,59 +10,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 <style>
-      html,
-      body {
-        position: relative;
-        height: 100%;
-      }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
 
-      body {
-        background: transparent;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        margin: 0;
-        padding: 0;
-      }
+body {
+  background: transparent;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
 
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
+.swiper {
+  width: 100%;
+  height: 100%;
+}
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
 
-      .swiper-slide img {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+.swiper-slide img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-      .product:hover img {
-    opacity: 0.6
+.product {
+    position: relative
+}
+
+.product:hover img {
+opacity: 0.6
 }
 
 .product-btn {
@@ -111,6 +113,30 @@
     opacity: 0;
     transition: all 0.3s
 }
+
+.modal-close {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #4650dd !important;
+    color: #fff;
+    padding: 0;
+    opacity: 1 !important;
+    transition: all 0.3s
+}
+
+.modal-close:hover {
+    background: #303cd9 !important;
+    color: #fff
+}
     </style>
 </head>
 
@@ -127,7 +153,7 @@
             <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
                     <a class="nav-link fs-4" href="../categories.php">Categories</a>
-                    <a class="nav-link fs-4" href="#">Product</a>
+                    <a class="nav-link fs-4" href="../product.php?all">Product</a>
                     <a class="nav-link fs-4" href="../shop.php">Shop</a>
 
                     <!-- <li class="nav-item dropdown">
@@ -149,7 +175,7 @@
             </div>
             <div class="container-fluid">
                 <form class="d-flex justify-content-end">
-                    <a href="../signup.php"><button class="btn btn-lg btn-outline-secondary" type="button">Sign
+                    <a href="../signup.php?shopper"><button class="btn btn-lg btn-outline-secondary" type="button">Sign
                             Up</button></a>
                     <a class="navbar-brand" href="#"></a>
                     <a href="../login.php"><button class="btn btn-lg btn-outline-success me-2"

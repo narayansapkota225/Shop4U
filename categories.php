@@ -9,26 +9,7 @@
     <br></br>
     <div class="container text-center">
         <div class="row justify-content-center">
-            <div class="col-lg-4">
-                <a href="#"><img src="images/burger.jpg" class="rounded bd-placeholder-img" width="300" height="300"></img>
-                <h2>Korean</h2></a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#"><img src="images/burger.jpg" class="rounded bd-placeholder-img" width="300" height="300"></img>
-                <h2>Indian</h2></a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#"><img src="images/burger.jpg" class="rounded bd-placeholder-img" width="300" height="300"></img>
-                <h2>Japanese</h2></a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#"><img src="images/burger.jpg" class="rounded bd-placeholder-img" width="300" height="300"></img>
-                <h2>Western</h2></a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#"><img src="images/burger.jpg" class="rounded bd-placeholder-img" width="300" height="300"></img>
-                <h2>Chinese</h2></a>
-            </div>
+            <?php include('db/showcategoryconfig.php')?>
         </div>
     </div>
 </main>
