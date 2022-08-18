@@ -1,5 +1,4 @@
 <!-- footer -->
-<br></br>
 <footer class="footer bg-light">
     <div class="container">
         <div class="row">
@@ -24,7 +23,7 @@
             <div class="footer-col">
                 <h4>Follow Us</h4>
                 <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/Shop4U-101681615992915" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
