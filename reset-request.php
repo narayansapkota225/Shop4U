@@ -40,10 +40,12 @@ if (isset($_POST["email"])) {
     $to_email = $userEmail;
 
     $subject = 'Reset your Shop4U password!';
-
-    $message = '<p>We have received a password reset request. The link to reset your password is. You can click the link or copy and paste it in your browser. If you did not make this request, please ignore this message.</p>';
+    $message = '<p>Dear User,</p>';
+    $message .= '<p><b>We have received a password reset request for your account.</b><p>You can click on the link below or copy and paste it in your browser.</p>';
     $message .= '<p>Here is your password reset link: <br>';
     $message .= '<a href="'. $url . '">' . $url . '</a></p>';
+    $message .= '<p>If you did not make this request, please ignore this message.</p>';
+    $message .= '<p>Best regards,</p><p>Shop4U Admin Team</p>';
 
     $headers = "From: Shop4U Admin <aqcdpr455@gmail.com>\r\n";
     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
