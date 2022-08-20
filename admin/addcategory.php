@@ -8,7 +8,7 @@ if(!isset($_SESSION['UserData']['Username'])){
 <?php $Title = "Add Category | Admin - Shop4U"?>
 <?php include('../partial/adminmenu.php')?>
 <!-- content here -->
-<div class="container">
+<div class="container ">
     <div class="container" style="margin-top: 40px">
         <a href="category.php"><button class="btn btn-lg btn-outline-primary" type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
     </div>
@@ -58,5 +58,6 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
     </div>
 </div>
+<br></br>
 <!-- content end-->
 <?php include('../partial/footer.php')?>

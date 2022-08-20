@@ -69,5 +69,6 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
     </div>
 </div>
+<br></br>
 <!-- content end-->
 <?php include('../partial/footer.php')?>
