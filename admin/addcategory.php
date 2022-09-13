@@ -31,22 +31,22 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <div class="col-md-10">
                         <label class="form-label">Feature: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="feature" value="yes" >
+                            <input class="form-check-input" type="radio" name="feature" value="1" >
                             <label class="form-check-label" for="feature">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="feature" value="no" checked>
+                            <input class="form-check-input" type="radio" name="feature" value="0" checked>
                             <label class="form-check-label" for="feature">No</label>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <label class="form-label">Active: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="active" value="yes" checked >
+                            <input class="form-check-input" type="radio" name="active" value="1" checked >
                             <label class="form-check-label" for="feature">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="active" value="no" >
+                            <input class="form-check-input" type="radio" name="active" value="0" >
                             <label class="form-check-label" for="feature">No</label>
                         </div>
                     </div>

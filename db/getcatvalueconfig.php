@@ -3,7 +3,7 @@
 include "config.php";
 
 // get all active category
-$sql = "SELECT * FROM category WHERE active='yes'";
+$sql = "SELECT * FROM category WHERE active=1";
 $res = mysqli_query($conn,$sql);
 
 // count the row of category 
