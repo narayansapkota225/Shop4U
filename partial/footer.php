@@ -1,4 +1,5 @@
 <!-- footer -->
+<br />
 <footer class="footer bg-light">
     <div class="container">
         <div class="row">
@@ -6,9 +7,9 @@
                 <h4>Company</h4>
                 <ul>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="product.php">Our Products</a></li>
-                    <li><a href="categories.php">Product Categories</a></li>
-                    <li><a href="shop.php">Our Partners</a></li>
+                    <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>/product.php?all">Our Products</a></li>
+                    <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>/categories.php">Product Categories</a></li>
+                    <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>/shop.php">Our Partners</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -23,9 +24,11 @@
             <div class="footer-col">
                 <h4>Follow Us</h4>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/Shop4U-101681615992915" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/Shop4U-101681615992915" target="_blank"><i
+                            class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/shop4uapps/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/shop4uapps/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
