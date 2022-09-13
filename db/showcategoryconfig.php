@@ -2,7 +2,7 @@
 
 require "config.php";
 
-$sql="SELECT * FROM category WHERE active='yes' ";
+$sql="SELECT * FROM category WHERE active=1 ";
 $res=mysqli_query($conn,$sql);
 
 $count = mysqli_num_rows($res);

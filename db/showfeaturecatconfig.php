@@ -2,7 +2,7 @@
 
 require "config.php";
 
-$sql="SELECT * FROM category WHERE feature='yes' AND active='yes' LIMIT 3";
+$sql="SELECT * FROM category WHERE feature=1 AND active=1 LIMIT 3";
 $res=mysqli_query($conn,$sql);
 
 $count = mysqli_num_rows($res);
