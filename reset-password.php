@@ -8,10 +8,10 @@ if (isset($_POST["reset-password-submit"])) {
     $passwordRepeat = $_POST["pwd-repeat"];
 
     if (empty($uPassword) || empty($passwordRepeat)) {
-        header("Location: create-new-password.php?newpwd=empty");
+        header("Location: create-new-password.php?newpwd=empty&selector=".$selector."&validator=".$validator);
         exit();
     } else if ($uPassword != $passwordRepeat) {
-        header("Location: create-new-password.php?newpwd=pwdnotsame");
+        header("Location: create-new-password.php?newpwd=pwdnotsame&selector=".$selector."&validator=".$validator);
         exit();
     }
 

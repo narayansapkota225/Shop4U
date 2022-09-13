@@ -25,7 +25,7 @@ if (isset($_POST["email"])) {
 
     $sql = "INSERT INTO pwdReset (pwdResetEmail, pwdResetSelector, pwdResetToken, pwdResetExpires) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {echo "post successful!";
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
         echo 'There was an error!';
         exit();
     } else {
