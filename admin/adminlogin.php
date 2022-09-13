@@ -1,6 +1,7 @@
 <?php $Title = "Admin Login - Shop4U"?>
 <?php include('../partial/menu.php')?>
 <!-- Content start here -->
+<div class="container py-5">
 <form action="../db/adminconfig.php" method="post" name="Login_Form">
   <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
     <?php if(isset($_GET['error'])){?>
@@ -25,5 +26,6 @@
     </tr>
   </table>
 </form>
+  </div>
 <!-- Content End here-->
 <?php include('../partial/footer.php')?>

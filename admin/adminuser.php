@@ -1,22 +1,23 @@
 <?php session_start(); /* Starts the session */
 
-if(!isset($_SESSION['UserData']['Username'])){
-        header("location:../adminlogin.php");
-        exit;
+if (!isset($_SESSION['UserData']['Username'])) {
+    header("location:../adminlogin.php");
+    exit;
 }
 ?>
 <?php $Title = "Active Users | Admin - Shop4U"?>
-<?php include('../partial/adminmenu.php')?>
+<?php include '../partial/adminmenu.php'?>
 <!-- content here -->
 <main class="flex-shrink-0">
     <div class="container">
         <h1 class="mt-5">User Page</h1>
-        <?php if (isset($_GET['result'])) { ?>
-        <p class="alert alert-success alert-dismissible fade show"><strong><?php echo $_GET['result']; ?></strong></p>
-        <?php } ?>
-        <?php if (isset($_GET['error'])) { ?>
-        <p class="alert alert-danger alert-dismissible fade show"><strong><?php echo $_GET['error']; ?></strong></p>
-        <?php } ?>
+        <?php if (isset($_GET['adduser'])) {
+    if ($_GET["adduser"] === "prepare") {
+        echo '<div class="alert alert-danger alert-dismissible fade show"><i class="fa-solid fa-triangle-exclamation"></i> There was an error processing your request!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    } elseif ($_GET["adduser"] === "useradded") {
+        echo '<div class="alert alert-success alert-dismissible fade show"><i class="fa-solid fa-triangle-exclamation"></i> User account has been successfully created!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    }
+}?>
     </div>
     <div class="container ">
         <div class="col-sm-21 shadow-lg p-3 bg-light rounded">
@@ -25,7 +26,7 @@ if(!isset($_SESSION['UserData']['Username'])){
             <div class="p-2 ">
                 <a class="fs-4 text-dark text-decoration-none " href="adduser.php"><button class="btn btn-lg btn-secondary" >Add an user</button></a>
             </div>
-            <div class="p-2"> 
+            <div class="p-2">
                 <a class="fs-4 text-dark text-decoration-none " href="adminblock.php"><button class="btn btn-lg btn-secondary">Blocked users</button></a>
             </div>
             <div class="p-2 ">
@@ -61,7 +62,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         <!-- form content -->
         <div class="tab-content">
         <!-- all user form content -->
-        <div id="all" class="tab-pane fade show active">   
+        <div id="all" class="tab-pane fade show active">
             <div class="table-responsive mt-2">
                 <table id="user" class="table table-striped caption-top">
                     <caption>
@@ -78,14 +79,14 @@ if(!isset($_SESSION['UserData']['Username'])){
                         </tr>
                     </thead>
                     <tbody>
-                        <?php include('../db/adminuserconfig.php') ?>
+                        <?php include '../db/adminuserconfig.php'?>
                     </tbody>
                 </table>
             </div>
         </div>
-        
+
         <!-- shopper content -->
-        <div id="shopper" class="tab-pane fade ">   
+        <div id="shopper" class="tab-pane fade ">
             <div class="table-responsive mt-2">
                 <table id="user" class="table table-striped caption-top">
                     <caption>
@@ -102,14 +103,14 @@ if(!isset($_SESSION['UserData']['Username'])){
                         </tr>
                     </thead>
                     <tbody>
-                        <?php include('../db/adminshopperconfig.php') ?>
+                        <?php include '../db/adminshopperconfig.php'?>
                     </tbody>
                 </table>
             </div>
         </div>
 
         <!-- picker content -->
-        <div id="picker" class="tab-pane fade ">   
+        <div id="picker" class="tab-pane fade ">
             <div class="table-responsive mt-2">
                 <table id="user" class="table table-striped caption-top">
                     <caption>
@@ -126,7 +127,7 @@ if(!isset($_SESSION['UserData']['Username'])){
                         </tr>
                     </thead>
                     <tbody>
-                        <?php include('../db/adminpickerconfig.php') ?>
+                        <?php include '../db/adminpickerconfig.php'?>
                     </tbody>
                 </table>
             </div>
@@ -141,5 +142,6 @@ if(!isset($_SESSION['UserData']['Username'])){
     return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 </script>
+
 <!-- content end-->
-<?php include('../partial/footer.php')?>
+<?php include '../partial/footer.php'?>

@@ -1,9 +1,11 @@
+<?php $Title = "Shops we Partner with - Shop4U"?>
 <?php include('./partial/regis.php') ?>
+
 <!-- content start here-->
 <section class="py-5 text-center container">
     <div class="container">
         <h1 class="mt-5">Our Shop</h1>
-        <p class="lead">We are working together with this shop to deliver to you.</p>
+        <p class="lead">We are working together with these shops to deliver to you.</p>
     </div>
     <div class="album py-5 bg-light">
         <div class="container">

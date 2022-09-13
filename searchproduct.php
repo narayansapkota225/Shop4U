@@ -1,10 +1,11 @@
-<?php $Title = "Product - Shop4U"?>
+<?php $search = $_POST['search'];?>
+<?php $Title = "Search results for ". $search." - Shop4U"?>
 <?php include('partial/regis.php')?> 
 <!-- content start here -->
 <!-- modal -->
 <?php include('db/showpromodalconfig.php')?>
 <!-- modal -->
-<?php $search = $_POST['search'];?>
+
 <div class="container py-5">
     <div class="container">
     <p class="text-center fs-4 py-4"><strong> Search Result of "<?php echo $search;?>"</strong></p>

@@ -1,12 +1,12 @@
 <?php session_start(); /* Starts the session */
 
-if(!isset($_SESSION['UserData']['Username'])){
-        header("location:adminlogin.php");
-        exit;
+if (!isset($_SESSION['UserData']['Username'])) {
+    header("location:adminlogin.php");
+    exit;
 }
 ?>
 <?php $Title = "Add User | Admin - Shop4U"?>
-<?php include('../partial/adminmenu.php')?>
+<?php include '../partial/adminmenu.php'?>
 <!-- content here -->
 <div class="container">
     <div class="container" style="margin-top: 40px">
@@ -14,9 +14,14 @@ if(!isset($_SESSION['UserData']['Username'])){
     </div>
     <div class="col-md-6 col-sm-21 shadow-lg p-5 rounded" style="margin-top: 40px">
         <h3 >Add User</h3>
-        <?php if (isset($_GET['error'])) { ?>
-        <p class="alert alert-danger alert-dismissible fade show"><strong><?php echo $_GET['error']; ?></strong></p>
-        <?php } ?>
+        <?php if (isset($_GET['adduser'])) {
+    if ($_GET["adduser"] === "pwdnotmatch") {
+        echo '<div class="alert alert-danger alert-dismissible fade show"><i class="fa-solid fa-triangle-exclamation"></i> The passwords do not match! Please try again!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    } elseif ($_GET["adduser"] === "existingemail") {
+        echo '<div class="alert alert-danger alert-dismissible fade show"><i class="fa-solid fa-triangle-exclamation"></i> Email address already exists in the system! Please use a different email address!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    }
+}
+?>
         <div class="">
             <form class="row g-3 needs-validation" action="../db/adminadduserconfig.php" method="POST">
                     <div class="col-md-6">
@@ -32,14 +37,14 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <div class="col-md-6">
                         <label class="form-label"><span class="fa fa-phone"></span> Phone Number</label>
                         <input type="tel" class="form-control" name="phno" id="pho" placeholder="0448751365"
-                        pattern="[0]{1}[0-5]{1}[0-9]{8}" 
+                        pattern="[0]{1}[0-5]{1}[0-9]{8}"
                         oninvalid="setCustomValidity('Please enter Valid Phone Number')"
                         onchange="try{setCustomValidity('')}catch(e){}" required="required">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label"><span class="fa fa-envelope"></span> Email</label>
-                        <input type="email" placeholder="exampler@mail.com" name="email" class="form-control" 
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                        <input type="email" placeholder="exampler@mail.com" name="email" class="form-control"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                         oninvalid="setCustomValidity('Please enter Valid Email Address')"
                         onchange="try{setCustomValidity('')}catch(e){}" required="required">
                     </div>
@@ -67,7 +72,7 @@ if(!isset($_SESSION['UserData']['Username'])){
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Post Code</label>
-                        <input type="text" class="form-control" pattern="[0-9]{4}" name="pocode" 
+                        <input type="text" class="form-control" pattern="[0-9]{4}" name="pocode"
                         oninvalid="setCustomValidity('Please enter Valid Post Code')"
                         onchange="try{setCustomValidity('')}catch(e){}" required="required">
                     </div>
@@ -96,8 +101,8 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <div></div>
                     <div class="col-md-6">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" name="pswd" 
-                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+                        <input type="password" class="form-control" name="pswd"
+                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                         oninvalid="setCustomValidity('Password must contain UpperCase, LowerCase, Number/SpecialCharacter and Min 8 Characters')"
                         onchange="try{setCustomValidity('')}catch(e){}" required="required">
                     </div>
@@ -114,4 +119,4 @@ if(!isset($_SESSION['UserData']['Username'])){
     </div>
 </div>
 <!-- content end-->
-<?php include('../partial/footer.php')?>
+<?php include '../partial/footer.php'?>

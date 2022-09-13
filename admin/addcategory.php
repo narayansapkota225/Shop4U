@@ -8,7 +8,7 @@ if(!isset($_SESSION['UserData']['Username'])){
 <?php $Title = "Add Category | Admin - Shop4U"?>
 <?php include('../partial/adminmenu.php')?>
 <!-- content here -->
-<div class="container">
+<div class="container ">
     <div class="container" style="margin-top: 40px">
         <a href="category.php"><button class="btn btn-lg btn-outline-primary" type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
     </div>
@@ -31,22 +31,22 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <div class="col-md-10">
                         <label class="form-label">Feature: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="feature" value="yes" >
+                            <input class="form-check-input" type="radio" name="feature" value="1" >
                             <label class="form-check-label" for="feature">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="feature" value="no" checked>
+                            <input class="form-check-input" type="radio" name="feature" value="0" checked>
                             <label class="form-check-label" for="feature">No</label>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <label class="form-label">Active: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="active" value="yes" checked >
+                            <input class="form-check-input" type="radio" name="active" value="1" checked >
                             <label class="form-check-label" for="feature">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="active" value="no" >
+                            <input class="form-check-input" type="radio" name="active" value="0" >
                             <label class="form-check-label" for="feature">No</label>
                         </div>
                     </div>
@@ -58,5 +58,6 @@ if(!isset($_SESSION['UserData']['Username'])){
             </div>
     </div>
 </div>
+<br></br>
 <!-- content end-->
 <?php include('../partial/footer.php')?>

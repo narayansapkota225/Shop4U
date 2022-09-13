@@ -2,9 +2,9 @@
 <?php include('partial/regis.php')?>
 <!-- reset password start here -->
 <div class="container-fluid">
-    <div class="" style="margin-top:40px">
+    <div>
         <div class="rounded d-flex justify-content-center">
-            <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+            <div class="shadow-lg p-5 bg-light" style="margin-top:50px margin-bottom:50px;">
                 <div class="text-center">
                     <h3 class="text-primary">Recover Your Password</h3>
                 </div>
