@@ -8,18 +8,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role'] ==
 <main class="flex-shrink-0">
     <div class="container">
         <h1 class="mt-5">Orders</h1>
-        <?php if (isset($_GET['result'])) {
-    if ($_GET["result"] === "orderprocessed") {
-        echo '<div class="alert alert-success alert-dismissible fade show"><i class="fa-solid fa-triangle-exclamation"></i> Your order has been successfully procesed!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
-    }
-}?>
     </div>
     <div class="container ">
     <?php if ($_GET['result'] == "deleted") {?>
         <p class="alert alert-success alert-dismissible fade show m-2"><i class="bi bi-check-circle-fill"></i> Your order has been successfully deleted!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></p>
         <?php } elseif ($_GET['result'] == "productprocessed") {?>
         <p class="alert alert-danger alert-dismissible fade show m-2"><i class="bi bi-exclamation-triangle-fill"></i> Order cannot be deleted! It has been processed by the picker!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></p>
-        <?php }?>
+        <?php } elseif($_GET["result"] === "orderprocessed") { ?>
+            <p class="alert alert-success alert-dismissible fade show m-2"><i class="bi bi-check-circle-fill"></i> Your order has been successfully processed!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></p>
+        <?php } ?>
         <!-- form content -->
         <div class="tab-content">
         <!-- all user form content -->
