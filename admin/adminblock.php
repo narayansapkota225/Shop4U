@@ -1,7 +1,7 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:../adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
@@ -20,7 +20,7 @@ if(!isset($_SESSION['UserData']['Username'])){
       <a href="adminuser.php"><button class="btn btn-lg btn-outline-primary" type="button" ><span class="fa-solid fa-arrow-left"></span> Back</button></a>
   </div>
   <div class="table-responsive mt-2" >
-    <table class="table table-striped caption-top">
+    <table id="block" class="table table-striped caption-top">
     <caption><h3>List of Blocked Users</h3></caption>
       <thead class="table-dark">
         <tr>
@@ -40,5 +40,12 @@ if(!isset($_SESSION['UserData']['Username'])){
 </div>
 
 </main>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('#block').DataTable();
+});
+</script>
 <!-- content end-->
 <?php include('../partial/footer.php')?>
