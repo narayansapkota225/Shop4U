@@ -3,8 +3,8 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['email']) && ($_SESSION['role'] == 2)) {
     ?>
-<?php $Title = "View Order | Picker - Shop4U"?>
-<?php include '../partial/pickermenu.php'?>
+<?php $Title = "View Order | Picker - Shop4U";?>
+<?php include '../partial/pickermenu.php';?>
 
 <!-- content start here-->
         <?php
@@ -32,12 +32,16 @@ $orderid = $_GET['orderid'];
             $status = $row['orderStatus'];
             $deliveryFee = $row['handlingFee'];
             $tax = $row['tax'];
-
+            $shopperId = $row['shopperId'];
+            $previous = "javascript:history.go(-1)";
+            if(isset($_SERVER['HTTP_REFERER'])) {
+                $previous = $_SERVER['HTTP_REFERER'];
+            }
             ?>
         <div class="container">
         
         <div class="container" style="margin-top: 40px">
-        <a href="orders.php"><button class="btn btn-primary " type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
+        <a href="<?= $previous ?>"><button class="btn btn-primary " type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
     </div>
     <div class="container py-3 text-center">
             <h3>Order Details</h3>
@@ -46,19 +50,32 @@ $orderid = $_GET['orderid'];
             <h6>Order Date: <?php echo $date;?></h6>
             <h6>Order Status: <?php if($status == 0){
                     echo "Waiting for Picker";
+                }elseif ($status == 1) {
+                    echo "Picker Assigned";
+                } elseif ($status == 2) {
+                    echo "Order Processing";
+                } elseif ($status == 3 ) {
+                    echo "Order Getting Ready";
+                } elseif ($status == 4) {
+                    echo "Order enroute";
+                } elseif ($status == 5) {
+                    echo "Order Delivered";
                 } ?></h6>
         </div>
-            <div class="col-lg-12 p-2 bg-white rounded shadow-sm mb-5">
+            <div class="col-lg-12 p-2 bg-white rounded shadow-lg mb-5">
                 <div class="table-responsive">
                     <!-- Shopping cart table -->
                     <table id="user" class="table table-striped caption-top">
                         <caption>
-                            <h3>Order Items</h3>
+                            <h3>#SHOP4U<?php echo $orderid;?></h3>
                         </caption>
                         <thead>
                             <tr>
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="p-2 text-uppercase">Product</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Price</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">Quantity</div>
@@ -103,10 +120,12 @@ $orderid = $_GET['orderid'];
                                             exit();
                                         } else {
                                             $prodname = $row['title'];
+                                            $price = $row['price'];
                                             $image = $row['image']; ?>
                             <tr>
                                 <th scope="row"><img class="img-fluid " src="../images/product/<?php echo $image; ?>"
                                         style="width:100px;"> <?php echo $prodname; ?></th>
+                                <td scope="row"><?php echo $price; ?></td>
                                 <td scope="row"><?php echo $qty; ?></td>
                                 <td scope="row"><?php echo $prodSubtotal; ?></td>
                             </tr>
@@ -140,6 +159,33 @@ $orderid = $_GET['orderid'];
                             </li>
                         </ul>
                     </div>
+                    <?php
+
+    $sql = "SELECT * FROM user WHERE id=?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "There was an error!";
+        exit();
+    } else {
+        mysqli_stmt_bind_param($stmt, "i", $shopperId);
+        mysqli_stmt_execute($stmt);
+
+        $result = mysqli_stmt_get_result($stmt);
+        if (!$row = mysqli_fetch_array($result)) {
+            echo "You need to resubmit your reset request.";
+            exit();
+        } else {
+
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+            $phone = $row['phone'];
+            $email = $row['email'];
+            $address = $row['address'];
+            $city = $row['city'];
+            $postCode = $row['postCode'];
+            $state = $row['state'];
+            $fullname = $firstname . " " . $lastname;
+            ?>
                     <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bolder">Instructions</div>
                     <div class="p-4">
                         <p><?php  if ($instructions == null) {
@@ -148,24 +194,56 @@ $orderid = $_GET['orderid'];
                         echo $instructions;
                     } ?></p>
                     </div>
-                    <button type="button" class="btn btn-success rounded-pill position-relative" data-bs-toggle="modal" data-bs-target="#pickModal"> Pick Order
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bolder">Customer Details</div>
+                    <div class="p-4">
+                        <p>Name: <a href="viewshopper.php?id=<?php echo $shopperId ?>" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-black"><?php echo $fullname; ?></a></p>
+                        <p><a href="tel:+61<?php echo $phone; ?>" class="text-decoration-none text-black"><i class="bi bi-telephone-fill"></i> <?php echo $phone; ?></a></p>
+                        <p><a href="mailto:<?php echo $email; ?>" class="text-decoration-none text-black"><i class="bi bi-envelope-fill"></i> <?php echo $email; ?></a></p>
+                        <p><?php echo $address; ?>, <?php echo $city; ?></p>
+                        <p><?php echo $postCode; ?> <?php echo $state; ?></p>
+                    </div>
+                    <?php 
+                    }
+                }if ($status == 0){
+                        $orderConfirmation = "Confrimation of Order Pick!";
+                        $orderMessage = "Are you sure you want to pick this order?";
+                        $orderButton = "Accept Order";
+                        $orderStatusPost = 1;?>
+                    <div class="d-grid gap-2 p-3 ">
+                    <button type="button" class="btn btn-success rounded-pill position-relative" data-bs-toggle="modal" data-bs-target="#pickModal"> Accept Order
                     </button>
+                    </div>
+                    <?php } elseif($status == 1){
+                        $orderConfirmation = "Confrimation of Order Delivery!";
+                        $orderMessage = "Are you sure you want to deliver this order?";
+                        $orderButton = "Deliver Order";
+                        $orderStatusPost = 5;?>
+                    <div class="d-grid gap-2 p-3 ">
+                    <button type="button" class="btn btn-primary rounded-pill position-relative" data-bs-toggle="modal" data-bs-target="#pickModal"> Deliver Order
+                    </button>
+                    </div>
+                    <?php } ?>
                     <!-- Modal content here -->
 </div>
 <div class="modal fade" id="pickModal" tabindex="-1" aria-labelledby="pickModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-success text-center" id="pickModalLabel">Confirmation of Order Pick!</h5>
+        <h5 class="modal-title <?php if ($status == 0){ ?> text-success <?php }else{ ?> text-primary <?php } ?> text-center fw-bold" id="pickModalLabel"><?php echo $orderConfirmation; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="../db/pickorder.php" method="post">
+      <form action="../db/updateorder.php" method="post">
       <div class="modal-body">
             <input type="hidden" name="id" value="<?php echo $orderid; ?>">
-            Are you sure you want to pick this order?                    
+            <input type="hidden" name="orderStatusPost" value="<?php echo $orderStatusPost; ?>">
+            <?php echo $orderMessage; ?>                    
       </div>
       <div class="modal-footer">
-          <input class="btn btn-success rounded-pill py-2 " type="submit" name="pickOrder" value="Pick Order">
+          <?php if ($status == 0){ ?>
+          <input class="btn btn-success rounded-pill py-2 " type="submit" name="acceptOrder" value="<?php echo $orderButton; ?>">
+          <?php } elseif ($status == 1){ ?>
+          <input class="btn btn-primary rounded-pill py-2 " type="submit" name="deliverOrder" value="<?php echo $orderButton; ?>">
+            <?php } ?>
       </div>
     </form>
     </div>
@@ -180,7 +258,7 @@ $orderid = $_GET['orderid'];
                     <!-- End -->
             </div>
         <!-- content end -->
-        <?php include '../partial/footer.php'?>
+        <?php include '../partial/footer.php';?>
         <?php
 } else {
     header("Location: ../login.php");
