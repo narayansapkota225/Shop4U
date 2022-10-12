@@ -1,11 +1,11 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:admin/ adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
-<?php $Title = "Add Category | Admin - Shop4U"?>
+<?php $Title = "Update Category | Admin - Shop4U"?>
 <?php include('../partial/adminmenu.php')?>
 <!-- content here -->
 <div class="container">
@@ -42,22 +42,22 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <div class="col-md-10">
                         <label class="form-label">Feature: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="feature" value="yes" <?php if($feature == "yes") echo "checked";?> >
+                            <input class="form-check-input" type="radio" name="feature" value="1" <?php if($feature == 1) echo "checked";?> >
                             <label class="form-check-label" for="feature">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="feature" value="no" <?php if($feature == "no") echo "checked";?>>
+                            <input class="form-check-input" type="radio" name="feature" value="0" <?php if($feature == 0) echo "checked";?>>
                             <label class="form-check-label" for="feature">No</label>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <label class="form-label">Active: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="active" value="yes" <?php if($active == "yes") echo "checked";?> >
+                            <input class="form-check-input" type="radio" name="active" value="1" <?php if($active == 1) echo "checked";?> >
                             <label class="form-check-label" for="feature">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="active" value="no" <?php if($active == "no") echo "checked";?> >
+                            <input class="form-check-input" type="radio" name="active" value="0" <?php if($active == 0) echo "checked";?> >
                             <label class="form-check-label" for="feature">No</label>
                         </div>
                     </div>
