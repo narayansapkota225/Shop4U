@@ -1,7 +1,7 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:../adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
@@ -19,27 +19,19 @@ if(!isset($_SESSION['UserData']['Username'])){
         <?php } ?>
     </div>
     <div class="container ">
-        <div class="col-sm-21 shadow-lg p-3 bg-light rounded">
+        <div class="col-sm-21 shadow-lg p-2 bg-light rounded">
             <nav class="navbar navbar-light bg-light">
                 <div class="d-flex flex-wrap">
                     <div class="p-2 ">
                         <a class="fs-4 text-dark text-decoration-none " href="addproduct.php"><button class="btn btn-lg btn-primary" >Add a product</button></a>
                     </div>
                 </div>
-                <div class="justify-content-end">
-                    <form class="form input-group" action="searchproduct.php" method="POST">
-                        <input class="form-control" type="text" placeholder="Search" name="search"  required>
-                        <span>&nbsp;&nbsp;</span>
-                        <button class="btn btn-lg btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass"></span>
-                            Search</button>
-                    </form>
-                </div>
             </nav>
         </div>
 
         <!-- form tab -->
-        <div class=" col-sm-21 shadow-lg p-5 bg-light rounded">
-        <ul class="nav bg-white nav-pills rounded-pill nav-fill mb-3">
+        <div class=" col-sm-21 shadow-lg p-2 bg-light rounded">
+        <ul class="nav bg-white nav-pills rounded-pill nav-fill ">
             <li class="nav-item">
             <a class="nav-link active rounded-pill " data-bs-toggle="pill" data-bs-target="#all" role="tab" >All</a>
             </li>
@@ -52,7 +44,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         <!-- all product form content -->
         <div id="all" class="tab-pane fade show active"> 
             <div class="table-responsive mt-2">
-                <table id="user" class="table table-striped caption-top">
+                <table id="product" class="table table-striped caption-top">
                     <caption>
                         <h3>List of Product</h3>
                     </caption>
@@ -82,6 +74,14 @@ if(!isset($_SESSION['UserData']['Username'])){
     </div>
 
 </main>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('#product').DataTable();
+});
+</script>
+
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
