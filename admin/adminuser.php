@@ -1,7 +1,7 @@
 <?php session_start(); /* Starts the session */
 
 if (!isset($_SESSION['UserData']['Username'])) {
-    header("location:../adminlogin.php");
+    header("location:adminlogin.php");
     exit;
 }
 ?>
@@ -17,10 +17,15 @@ if (!isset($_SESSION['UserData']['Username'])) {
     } elseif ($_GET["adduser"] === "useradded") {
         echo '<div class="alert alert-success alert-dismissible fade show"><i class="fa-solid fa-triangle-exclamation"></i> User account has been successfully created!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
     }
-}?>
+}?><?php if (isset($_GET['error'])) { ?>
+    <p class="alert alert-danger alert-dismissible fade show"><strong><?php echo $_GET['error']; ?></strong></p>
+    <?php } ?>
+    <?php if (isset($_GET['result'])) { ?>
+    <p class="alert alert-success alert-dismissible fade show"><strong><?php echo $_GET['result']; ?></strong></p>
+    <?php } ?>
     </div>
     <div class="container ">
-        <div class="col-sm-21 shadow-lg p-3 bg-light rounded">
+        <div class="col-sm-21 shadow-lg p-2 bg-light rounded">
         <nav class="navbar navbar-light bg-light">
         <div class="d-flex flex-wrap">
             <div class="p-2 ">
@@ -33,19 +38,19 @@ if (!isset($_SESSION['UserData']['Username'])) {
                 <a class="fs-4 text-dark text-decoration-none " href="admindelete.php"><button class="btn btn-lg btn-secondary">Deleted users</button></a>
             </div>
         </div>
-        <div class="justify-content-end">
+        <!-- <div class="justify-content-end">
             <form class="form input-group" action="adminsearchuser.php" method="POST">
                 <input class="form-control" type="text" placeholder="Search" name="search"  required>
                 <span>&nbsp;&nbsp;</span>
                 <button class="btn btn-lg btn-outline-success" type="submit"><span class="fa-solid fa-magnifying-glass"></span>
                     Search</button>
             </form>
-        </div>
+        </div> -->
         </nav>
         </div>
         <!-- form tab -->
-        <div class=" col-sm-21 shadow-lg p-5 bg-light rounded">
-        <ul class="nav bg-white nav-pills rounded-pill nav-fill mb-3">
+        <div class=" col-sm-21 shadow-lg p-2 bg-light rounded">
+        <ul class="nav bg-white nav-pills rounded-pill nav-fill">
             <li class="nav-item">
             <a class="nav-link active rounded-pill " data-bs-toggle="pill" data-bs-target="#all" role="tab" >All</a>
             </li>
@@ -88,7 +93,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
         <!-- shopper content -->
         <div id="shopper" class="tab-pane fade ">
             <div class="table-responsive mt-2">
-                <table id="user" class="table table-striped caption-top">
+                <table id="shopperr" class="table table-striped caption-top">
                     <caption>
                         <h3>List of Active Shopper</h3>
                     </caption>
@@ -112,7 +117,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
         <!-- picker content -->
         <div id="picker" class="tab-pane fade ">
             <div class="table-responsive mt-2">
-                <table id="user" class="table table-striped caption-top">
+                <table id="pickerr" class="table table-striped caption-top">
                     <caption>
                         <h3>List of Active Picker</h3>
                     </caption>
@@ -136,6 +141,23 @@ if (!isset($_SESSION['UserData']['Username'])) {
     </div>
 
 </main>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('#user').DataTable();
+});
+</script>
+<script>
+$(document).ready(function () {
+    $('#shopperr').DataTable();
+});
+</script>
+<script>
+$(document).ready(function () {
+    $('#pickerr').DataTable();
+});
+</script>
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
