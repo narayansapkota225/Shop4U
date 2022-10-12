@@ -21,7 +21,7 @@ if($count > 0){
     <div class="product">
         <form action="../db/addtocart.php" method="POST">
             <div class="product mb-4">
-                <img class="img-fluid" src="../images/product/<?php echo $image;?>" style="width: auto; height: 300px; object-fit: fill;" >
+                <img class="img-fluid" src="../images/product/<?php echo $image;?>" style="width: auto; height: 300px; object-fit: contain;" >
                     <div class="cta shadow d-inline-block">
                         <a class="product-btn" data-bs-toggle="modal" data-bs-target="#p<?php echo $id;?>">
                         <i class="bi bi-arrows-angle-expand"></i>
