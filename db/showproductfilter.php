@@ -16,7 +16,7 @@ if($count > 0){
         ?>
             <div id="<?php echo $cat_title; ?>" class="tab-pane fade "> 
                 <div class="table-responsive mt-2">
-                    <table id="user" class="table table-striped caption-top">
+                    <table id="p<?php echo $cat_title; ?>" class="table table-striped caption-top">
                         <caption>
                             <h3>List of Product</h3>
                         </caption>
@@ -66,8 +66,16 @@ if($count > 0){
                                             <td scope="row">$<?php echo $price; ?></td>
                                             <td scope="row"><img src="../images/product/<?php echo $image; ?>" width="100px"> </td>
                                             <td scope="row"><?php echo $cate_title; ?></td>
-                                            <td scope="row"><?php echo $feature; ?></td>
-                                            <td scope="row"><?php echo $active; ?></td>
+                                            <td scope="row"><?php if ($feature == 0) {
+                                                echo "No";
+                                            } else {
+                                                echo "Yes";
+                                            }?></td>
+                                                <td scope="row"><?php if ($active == 0) {
+                                                echo "No";
+                                            } else {
+                                                echo "Yes";
+                                            }?></td>
                                             <td scope="row">
                                                 <a href="updateproduct.php? update=<?php echo $id ?>"><span style="padding:10px;" class="text-dark fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update Product"></span></a>
                                                 <a href="deleteproduct.php? update=<?php echo $id ?>"><span style="padding:10px;" class="text-danger fa-solid fa-trash" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete Prodcut"></span></a>
@@ -97,7 +105,11 @@ if($count > 0){
                     </table>
                 </div>
             </div>
-
+            <script>
+            $(document).ready(function () {
+                $('#p<?php echo $cat_title;?>').DataTable();
+            });
+            </script>
         <?php
     } 
 
