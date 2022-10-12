@@ -6,7 +6,7 @@
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>/contact.php">Contact Us</a></li>
                     <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>/product.php?all">Our Products</a></li>
                     <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>/categories.php">Product Categories</a></li>
                     <li><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>/shop.php">Our Partners</a></li>
