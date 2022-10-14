@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -20,16 +22,16 @@
     <!-- menu start here  -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="../admin/">Home</a>
+    <a class="navbar-brand fs-4" href="../admin/">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="../admin/orders.php">Order</a>
-        <a class="nav-link" href="../admin/product.php">Product</a>
-        <a class="nav-link" href="../admin/category.php">Category</a>
-        <a class="nav-link" href="../admin/adminuser.php">User</a>
+        <a class="nav-link fs-4" href="../admin/orders.php">Order</a>
+        <a class="nav-link fs-4" href="../admin/product.php">Product</a>
+        <a class="nav-link fs-4" href="../admin/category.php">Category</a>
+        <a class="nav-link fs-4" href="../admin/adminuser.php">User</a>
       </div>
     </div>
   </div>

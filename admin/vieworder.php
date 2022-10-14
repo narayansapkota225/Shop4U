@@ -1,7 +1,7 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:../adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
@@ -99,7 +99,7 @@ $orderid = $_GET['orderid'];
                     <!-- Shopping cart table -->
                     <table id="user" class="table table-striped caption-top">
                         <caption>
-                            <h3>Order No.<?php echo $orderid;?></h3>
+                            <h3>#SHOP4U<?php echo $orderid;?></h3>
                         </caption>
                         <thead>
                             <tr>

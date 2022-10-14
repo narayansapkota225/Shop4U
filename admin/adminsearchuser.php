@@ -1,7 +1,7 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:../adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
@@ -21,7 +21,7 @@ if(!isset($_SESSION['UserData']['Username'])){
 </div>
 <div class="container ">
     <div class="container-fluid justify-content-center">
-        <a href="adminuser.php"><button class="btn btn-lg btn-outline-primary" type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a> 
+        <a href="adminuser.php"><button class="btn btn-lg btn-outline-primary"><span class="fa-solid fa-arrow-left"></span> Back</button></a> 
     </div>
     <div class="container">
     <p class="text-center fs-4"><strong> Search Result of "<?php echo $search;?>"</strong></p>

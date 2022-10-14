@@ -1,7 +1,7 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:admin/ adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
@@ -13,7 +13,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         <a href="product.php"><button class="btn btn-lg btn-outline-primary" type="submit"><span class="fa-solid fa-arrow-left"></span> Back</button></a>
     </div>
     <div class="col-md-6 col-sm-21 shadow-lg p-5 rounded" style="margin-top: 40px">
-        <h3 >Update Category</h3>
+        <h3 >Update Product</h3>
         <?php if (isset($_GET['error'])) { ?>
         <p class="alert alert-danger alert-dismissible fade show"><strong><?php echo $_GET['error']; ?></strong></p>
         <?php } ?>
@@ -61,7 +61,7 @@ if(!isset($_SESSION['UserData']['Username'])){
                                 include "config.php";
 
                                 // get all active category
-                                $sql = "SELECT * FROM category WHERE active='yes'";
+                                $sql = "SELECT * FROM category WHERE active=1";
                                 $res = mysqli_query($conn,$sql);
 
                                 // count the row of category 
@@ -91,22 +91,22 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <div class="col-md-10">
                         <label class="form-label">Feature: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="feature" value="yes" <?php if($feature == "yes") echo "checked";?> >
+                            <input class="form-check-input" type="radio" name="feature" value="1" <?php if($feature == 1) echo "checked";?> >
                             <label class="form-check-label" for="feature">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="feature" value="no" <?php if($feature == "no") echo "checked";?>>
+                            <input class="form-check-input" type="radio" name="feature" value="0" <?php if($feature == 0) echo "checked";?>>
                             <label class="form-check-label" for="feature">No</label>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <label class="form-label">Active: </label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="active" value="yes" <?php if($active == "yes") echo "checked";?> >
+                            <input class="form-check-input" type="radio" name="active" value="1" <?php if($active == 1) echo "checked";?> >
                             <label class="form-check-label" for="feature">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="active" value="no" <?php if($active == "no") echo "checked";?>>
+                            <input class="form-check-input" type="radio" name="active" value="0" <?php if($active == 0) echo "checked";?>>
                             <label class="form-check-label" for="feature">No</label>
                         </div>
                     </div>

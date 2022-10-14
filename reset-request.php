@@ -11,7 +11,21 @@ if (isset($_POST["email"])) {
     require './db/config.php';
 
     $userEmail = $_POST["email"];
+    
+    $sql = "SELECT * FROM user WHERE email=?";
+            $stmt = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                echo "There was an error!";
+                exit();
+            } else {
+                mysqli_stmt_bind_param($stmt, "s", $userEmail);
+                mysqli_stmt_execute($stmt);
 
+                $result = mysqli_stmt_get_result($stmt);
+                if (!$row = mysqli_fetch_array($result)) {
+                    header("Location: forgot-password.php?reset=noaccount");
+                    exit();
+                } else {
     $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?;";
     $stmt = mysqli_stmt_init($conn);
     
@@ -54,6 +68,8 @@ if (isset($_POST["email"])) {
 
     header("Location: forgot-password.php?reset=success");
 
+                }
+            }
 } else {
     header("Location: index.php");
 }

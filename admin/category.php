@@ -1,7 +1,7 @@
 <?php session_start(); /* Starts the session */
 
 if(!isset($_SESSION['UserData']['Username'])){
-        header("location:../adminlogin.php");
+        header("location:adminlogin.php");
         exit;
 }
 ?>
@@ -25,7 +25,7 @@ if(!isset($_SESSION['UserData']['Username'])){
         </span>
         </nav>
         <div class="table-responsive mt-2">
-            <table id="user" class="table table-striped caption-top">
+            <table id="category" class="table table-striped caption-top">
                 <caption>
                     <h3>List of Category</h3>
                 </caption>
@@ -47,6 +47,15 @@ if(!isset($_SESSION['UserData']['Username'])){
     </div>
 
 </main>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('#category').DataTable();
+});
+</script>
+
+</script>
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

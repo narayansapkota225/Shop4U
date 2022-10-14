@@ -120,7 +120,7 @@ $total = $total + ($values["quantity"] * $values["price"]);
                                         <input type="hidden" name="deliveryFee" value="<?php echo $deliveryFee ?>">
                                 <li class="d-flex justify-content-between py-3 border-bottom"><strong
                                         class="text-muted">Tax</strong><strong>$<?php
-                                        $tax = number_format($total * 0.05,2);
+                                        $tax = number_format($total * 0.11,2);
                                         echo $tax; ?></strong>
                                         <input type="hidden" name="tax" value="<?php echo $tax ?>">
                                 </li>
